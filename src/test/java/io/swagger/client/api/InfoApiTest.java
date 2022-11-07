@@ -12,6 +12,8 @@
 
 package io.swagger.client.api;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.util.List;
 
 import org.junit.jupiter.api.Disabled;
@@ -238,12 +240,14 @@ public class InfoApiTest {
     @Test
     public void symbolnameFutureGetTest() throws Exception {
         String X_API_KEY = AuthorizedToken.getToken();
-        Integer derivMonth = 202206;
+        Integer derivMonth = 202211;
         String futureCode = "NK225mini";
         SymbolNameSuccess response = api.symbolnameFutureGet(X_API_KEY, derivMonth, futureCode);
 
         // TODO: test validations
-        System.out.println(response);        
+//        System.out.println(response);
+        assertEquals("167110019", response.getSymbol());
+        assertEquals("日経225mini 22/11", response.getSymbolName());
     }
     /**
      * オプション銘柄コード取得
@@ -256,12 +260,14 @@ public class InfoApiTest {
     @Test
     public void symbolnameOptionGetTest() throws Exception {
         String X_API_KEY = AuthorizedToken.getToken();
-        Integer derivMonth = 202204;
+        Integer derivMonth = 202211;
         String putOrCall = "C";
         Integer strikePrice = 26000;
         SymbolNameSuccess response = api.symbolnameOptionGet(X_API_KEY, derivMonth, putOrCall, strikePrice);
 
         // TODO: test validations
-        System.out.println(response);        
+//        System.out.println(response);
+        assertEquals("147116018", response.getSymbol());
+        assertEquals("日経平均オプション 22/11 コール 26000", response.getSymbolName());
     }
 }
