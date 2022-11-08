@@ -12,6 +12,7 @@ import com.github.hiuchida.api.consts.StateCode;
 import io.swagger.client.ApiClient;
 import io.swagger.client.ApiException;
 import io.swagger.client.api.InfoApi;
+import io.swagger.client.model.BoardSuccess;
 import io.swagger.client.model.OrdersSuccess;
 import io.swagger.client.model.PositionsSuccess;
 import io.swagger.client.model.SymbolNameSuccess;
@@ -25,6 +26,11 @@ public class InfoApiWrapper {
 
 	public InfoApiWrapper(ApiClient apiClient) {
 		api = new InfoApi(apiClient);
+	}
+
+	public BoardSuccess boardGet(String X_API_KEY, String symbol) throws ApiException {
+		BoardSuccess response = api.boardGet(X_API_KEY, symbol);
+		return response;
 	}
 
 	public List<OrdersSuccess> ordersGet(String X_API_KEY, ProductCode product, String id, String updtime, String details, String symbol, StateCode state, SideCode side, CashmarginCode cashmargin)

@@ -14,6 +14,7 @@ import com.github.hiuchida.api.consts.SideCode;
 import com.github.hiuchida.api.consts.StateCode;
 
 import io.swagger.client.api.AuthorizedToken;
+import io.swagger.client.model.BoardSuccess;
 import io.swagger.client.model.OrdersSuccess;
 import io.swagger.client.model.PositionsSuccess;
 import io.swagger.client.model.SymbolNameSuccess;
@@ -25,6 +26,24 @@ import io.swagger.client.model.SymbolNameSuccess;
 public class InfoApiWrapperTest {
 
 	private final InfoApiWrapper api = new InfoApiWrapper();
+
+    /**
+     * 時価情報・板情報
+     *
+     * 指定した銘柄の時価情報・板情報を取得します&lt;br&gt; レスポンスの一部にnullが発生した場合、該当銘柄を銘柄登録をしてから、 &lt;br&gt;再度時価情報・板情報APIを実行してください。
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void boardGetTest() throws Exception {
+        String X_API_KEY = AuthorizedToken.getToken();
+        String symbol = "9433@1"; // ＫＤＤＩ
+        BoardSuccess response = api.boardGet(X_API_KEY, symbol);
+
+        // TODO: test validations
+        System.out.println(response);        
+    }
 
     /**
      * 注文約定照会
