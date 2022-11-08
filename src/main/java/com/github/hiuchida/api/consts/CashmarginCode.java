@@ -1,8 +1,8 @@
-package api.consts;
+package com.github.hiuchida.api.consts;
 
 /**
  * 取引区分コード。
- * @see api.OrdersApi cashmargin:取引区分
+ * @see com.github.hiuchida.api.InfoApiWrapper cashmargin:取引区分
  */
 public enum CashmarginCode {
 	新規(2), 返済(3);

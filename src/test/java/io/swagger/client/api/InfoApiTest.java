@@ -117,14 +117,14 @@ public class InfoApiTest {
     @Test
     public void ordersGetTest() throws Exception {
         String X_API_KEY = AuthorizedToken.getToken();
-        String product = null;
+        String product = "3";
         String id = null;
         String updtime = null;
         String details = null;
         String symbol = null;
-        String state = null;
-        String side = null;
-        String cashmargin = null;
+        String state = "3";
+        String side = "2";
+        String cashmargin = "2";
         List<OrdersSuccess> response = api.ordersGet(X_API_KEY, product, id, updtime, details, symbol, state, side, cashmargin);
 
         // TODO: test validations
@@ -151,7 +151,7 @@ public class InfoApiTest {
         String X_API_KEY = AuthorizedToken.getToken();
         String product = "3";
         String symbol = null;
-        String side = null;
+        String side = "2";
         String addinfo = null;
         List<PositionsSuccess> response = api.positionsGet(X_API_KEY, product, symbol, side, addinfo);
 

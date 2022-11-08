@@ -1,9 +1,8 @@
-package api.consts;
+package com.github.hiuchida.api.consts;
 
 /**
  * 商品コード。
- * @see api.OrdersApi product:取得する商品
- * @see api.PositionsApi product:取得する商品
+ * @see com.github.hiuchida.api.InfoApiWrapper product:取得する商品
  */
 public enum ProductCode {
 	すべて(0), 現物(1), 信用(2), 先物(3), OP(4);

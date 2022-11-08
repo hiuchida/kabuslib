@@ -2,12 +2,20 @@ package com.github.hiuchida.api;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 
+import com.github.hiuchida.api.consts.CashmarginCode;
 import com.github.hiuchida.api.consts.FutureCode;
+import com.github.hiuchida.api.consts.ProductCode;
 import com.github.hiuchida.api.consts.PutOrCallCode;
+import com.github.hiuchida.api.consts.SideCode;
+import com.github.hiuchida.api.consts.StateCode;
 
 import io.swagger.client.api.AuthorizedToken;
+import io.swagger.client.model.OrdersSuccess;
+import io.swagger.client.model.PositionsSuccess;
 import io.swagger.client.model.SymbolNameSuccess;
 
 /**
@@ -17,6 +25,60 @@ import io.swagger.client.model.SymbolNameSuccess;
 public class InfoApiWrapperTest {
 
 	private final InfoApiWrapper api = new InfoApiWrapper();
+
+    /**
+     * 注文約定照会
+     *
+     * 注文一覧を取得します。&lt;br&gt; ※下記Queryパラメータは任意設定となります。
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void ordersGetTest() throws Exception {
+        String X_API_KEY = AuthorizedToken.getToken();
+        ProductCode product = ProductCode.先物;
+        String id = null;
+        String updtime = null;
+        String details = null;
+        String symbol = null;
+        StateCode state = StateCode.処理済;
+        SideCode side = SideCode.買;
+        CashmarginCode cashmargin = CashmarginCode.新規;
+        List<OrdersSuccess> response = api.ordersGet(X_API_KEY, product, id, updtime, details, symbol, state, side, cashmargin);
+
+        // TODO: test validations
+//        System.out.println(response);
+        System.out.println("List<OrdersSuccess>.size=" + response.size());
+        for (int i = 0; i < response.size(); i++) {
+        	OrdersSuccess order = response.get(i);
+        	if (order.getState() == 5) {
+        		continue;
+        	}
+        	System.out.println((i + 1) + ": " + order);
+        }
+    }
+
+    /**
+     * 残高照会
+     *
+     * 残高一覧を取得します。&lt;br&gt;※下記Queryパラメータは任意設定となります。
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void positionsGetTest() throws Exception {
+        String X_API_KEY = AuthorizedToken.getToken();
+        ProductCode product = ProductCode.先物;
+        String symbol = null;
+        SideCode side = SideCode.買;
+        String addinfo = null;
+        List<PositionsSuccess> response = api.positionsGet(X_API_KEY, product, symbol, side, addinfo);
+
+        // TODO: test validations
+        System.out.println(response);        
+    }
 
     /**
      * 先物銘柄コード取得

@@ -14,7 +14,8 @@ package io.swagger.client.api;
 
 import org.junit.jupiter.api.Test;
 
-import api.consts.SideCode;
+import com.github.hiuchida.api.consts.SideCode;
+
 import api.consts.deliv.ExchangeDCode;
 import api.consts.deliv.FrontOrderTypeDCode;
 import api.consts.deliv.TimeInForceCode;

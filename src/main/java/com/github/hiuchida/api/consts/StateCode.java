@@ -1,8 +1,8 @@
-package api.consts;
+package com.github.hiuchida.api.consts;
 
 /**
  * 状態コード。
- * @see api.OrdersApi state:状態
+ * @see com.github.hiuchida.api.InfoApiWrapper state:状態
  */
 public enum StateCode {
 	待機(1), 処理中(2), 処理済(3), 訂正取消送信中(4), 終了(5);

@@ -1,11 +1,19 @@
 package com.github.hiuchida.api;
 
+import java.util.List;
+
+import com.github.hiuchida.api.consts.CashmarginCode;
 import com.github.hiuchida.api.consts.FutureCode;
+import com.github.hiuchida.api.consts.ProductCode;
 import com.github.hiuchida.api.consts.PutOrCallCode;
+import com.github.hiuchida.api.consts.SideCode;
+import com.github.hiuchida.api.consts.StateCode;
 
 import io.swagger.client.ApiClient;
 import io.swagger.client.ApiException;
 import io.swagger.client.api.InfoApi;
+import io.swagger.client.model.OrdersSuccess;
+import io.swagger.client.model.PositionsSuccess;
 import io.swagger.client.model.SymbolNameSuccess;
 
 public class InfoApiWrapper {
@@ -17,6 +25,24 @@ public class InfoApiWrapper {
 
 	public InfoApiWrapper(ApiClient apiClient) {
 		api = new InfoApi(apiClient);
+	}
+
+	public List<OrdersSuccess> ordersGet(String X_API_KEY, ProductCode product, String id, String updtime, String details, String symbol, StateCode state, SideCode side, CashmarginCode cashmargin)
+			throws ApiException {
+		String productStr = (product != null) ? product.toString() : null;
+		String stateStr = (state != null) ? state.toString() : null;
+		String sideStr = (side != null) ? side.toString() : null;
+		String cashmarginStr = (cashmargin != null) ? cashmargin.toString() : null;
+		List<OrdersSuccess> response = api.ordersGet(X_API_KEY, productStr, id, updtime, details, symbol, stateStr, sideStr, cashmarginStr);
+		return response;
+	}
+
+	public List<PositionsSuccess> positionsGet(String X_API_KEY, ProductCode product, String symbol, SideCode side, String addinfo)
+			throws ApiException {
+		String productStr = (product != null) ? product.toString() : null;
+		String sideStr = (side != null) ? side.toString() : null;
+		List<PositionsSuccess> response = api.positionsGet(X_API_KEY, productStr, symbol, sideStr, addinfo);
+		return response;
 	}
 
 	public SymbolNameSuccess symbolnameFutureGet(String X_API_KEY, Integer derivMonth, FutureCode futureCode)
