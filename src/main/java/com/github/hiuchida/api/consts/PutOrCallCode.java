@@ -1,8 +1,8 @@
-package api.consts;
+package com.github.hiuchida.api.consts;
 
 /**
  * コール or プットコード。
- * @see api.SymbolNameApi putOrCall:コール or プット
+ * @see com.github.hiuchida.api.InfoApiWrapper putOrCall:コール or プット
  */
 public enum PutOrCallCode {
 	PUT("P"), CALL("C");

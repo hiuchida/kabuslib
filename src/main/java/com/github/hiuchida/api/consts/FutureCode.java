@@ -1,8 +1,8 @@
-package api.consts;
+package com.github.hiuchida.api.consts;
 
 /**
  * 先物コード。
- * @see api.SymbolNameApi futureCode:先物コード
+ * @see com.github.hiuchida.api.InfoApiWrapper futureCode:先物コード
  */
 public enum FutureCode {
 	日経平均先物("NK225"), 日経225mini先物("NK225mini"), TOPIX先物("TOPIX"), ミニTOPIX先物("TOPIXmini"), 東証マザーズ先物("MOTHERS"),
