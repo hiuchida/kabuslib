@@ -1,3 +1,5 @@
 @echo off
 
-mvn clean source:jar install -Dmaven.test.skip=true
+call mvn clean source:jar install -Dmaven.test.skip=true
+
+pause
