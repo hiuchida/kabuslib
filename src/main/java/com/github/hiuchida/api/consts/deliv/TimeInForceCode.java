@@ -1,9 +1,9 @@
-package api.consts.deliv;
+package com.github.hiuchida.api.consts.deliv;
 
 /**
  * 有効期間条件。
- * @see api.SendoderFutureApi body.timeInForce:注文発注（株式）情報／有効期間条件。
- * @see api.SendoderOptionApi body.timeInForce:注文発注（株式）情報／有効期間条件。
+ * @see io.swagger.client.model.RequestSendOrderDerivFuture.timeInForce:注文発注（株式）情報／有効期間条件。
+ * @see io.swagger.client.model.RequestSendOrderDerivOption.timeInForce:注文発注（株式）情報／有効期間条件。
  */
 public enum TimeInForceCode {
 	FAS(1), FAK(2), FOK(3);

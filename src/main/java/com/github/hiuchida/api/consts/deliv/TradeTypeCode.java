@@ -1,9 +1,9 @@
-package api.consts.deliv;
+package com.github.hiuchida.api.consts.deliv;
 
 /**
  * 取引区分コード。
- * @see api.SendoderFutureApi body.tradeType:注文発注（先物）情報／市場コード。
- * @see api.SendoderOptionApi body.tradeType:注文発注（オプション）情報／市場コード。
+ * @see io.swagger.client.model.RequestSendOrderDerivFuture.tradeType:注文発注（先物）情報／市場コード。
+ * @see io.swagger.client.model.RequestSendOrderDerivOption.tradeType:注文発注（オプション）情報／市場コード。
  */
 public enum TradeTypeCode {
 	新規(1), 返済(2);

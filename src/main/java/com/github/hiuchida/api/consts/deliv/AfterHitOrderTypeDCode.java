@@ -1,10 +1,10 @@
-package api.consts.deliv;
+package com.github.hiuchida.api.consts.deliv;
 
 /**
  * ヒット後執行条件コード。
  * 
- * @see api.SendoderFutureApi body.reverseLimitOrder.afterHitOrderType:注文発注（先物）情報／ヒット後執行条件。
- * @see api.SendoderOptionApi body.reverseLimitOrder.afterHitOrderType:注文発注（オプション）情報／ヒット後執行条件。
+ * @see io.swagger.client.model.RequestSendOrderDerivFuture.reverseLimitOrder.afterHitOrderType:注文発注（先物）情報／ヒット後執行条件。
+ * @see io.swagger.client.model.RequestSendOrderDerivOption.reverseLimitOrder.afterHitOrderType:注文発注（オプション）情報／ヒット後執行条件。
  */
 public enum AfterHitOrderTypeDCode {
 	成行(1), 指値(2);
