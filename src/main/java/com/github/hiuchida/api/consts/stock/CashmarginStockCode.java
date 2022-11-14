@@ -1,4 +1,4 @@
-package api.consts.stock;
+package com.github.hiuchida.api.consts.stock;
 
 /**
  * 取引区分コード（株式用）。

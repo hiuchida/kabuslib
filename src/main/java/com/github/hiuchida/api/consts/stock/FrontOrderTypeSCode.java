@@ -1,9 +1,9 @@
-package api.consts.stock;
+package com.github.hiuchida.api.consts.stock;
 
 /**
  * 執行条件コード。
  * 
- * @see api.SendoderApi body.side:注文発注（株式）情報／執行条件。
+ * @see io.swagger.client.model.RequestSendOrder.frontOrderType:注文発注（株式）情報／執行条件。
  */
 public enum FrontOrderTypeSCode {
 	成行(10), 寄成_前場(13), 寄成_後場(14), 引成_前場(15), 引成_後場(16), IOC成行(17), 指値(20), 寄指_前場(21), 寄指_後場(22), 引指_前場(23), 引指_後場(24),

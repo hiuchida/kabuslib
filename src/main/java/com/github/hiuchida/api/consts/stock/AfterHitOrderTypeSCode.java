@@ -1,4 +1,4 @@
-package api.consts.stock;
+package com.github.hiuchida.api.consts.stock;
 
 /**
  * ヒット後執行条件コード。

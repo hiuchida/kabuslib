@@ -1,8 +1,9 @@
-package api.consts.stock;
+package com.github.hiuchida.api.consts.stock;
 
 /**
  * 商品種別。
- * @see api.SendoderApi body.tradeType:注文発注（株式）情報／商品種別。
+ * 
+ * @see io.swagger.client.model.RequestSendOrder.securityType:注文発注（株式）情報／商品種別。
  */
 public enum SecurityTypeCode {
 	株式(1);

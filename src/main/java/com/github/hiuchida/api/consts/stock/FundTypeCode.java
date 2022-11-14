@@ -1,8 +1,9 @@
-package api.consts.stock;
+package com.github.hiuchida.api.consts.stock;
 
 /**
  * 資産区分（預り区分）。
- * @see api.SendoderApi body.fundType:注文発注（株式）情報／資産区分（預り区分）。
+ * 
+ * @see io.swagger.client.model.RequestSendOrder.fundType:注文発注（株式）情報／資産区分（預り区分）。
  */
 public enum FundTypeCode {
 	現物売("  "), 保護("02"), 信用代用("AA"), 信用取引("11");

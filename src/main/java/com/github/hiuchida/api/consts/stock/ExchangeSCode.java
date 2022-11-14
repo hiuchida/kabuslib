@@ -1,8 +1,9 @@
-package api.consts.stock;
+package com.github.hiuchida.api.consts.stock;
 
 /**
  * 市場コード（株式用）。
- * @see api.SendoderApi body.tradeType:注文発注（株式）情報／市場コード。
+ * 
+ * @see io.swagger.client.model.RequestSendOrder.exchange:注文発注（株式）情報／市場コード。
  */
 public enum ExchangeSCode {
 	東証(1), 名証(3), 福証(5), 札証(6);

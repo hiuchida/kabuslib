@@ -1,8 +1,9 @@
-package api.consts.stock;
+package com.github.hiuchida.api.consts.stock;
 
 /**
  * 口座種別。
- * @see api.SendoderApi body.accountType:注文発注（株式）情報／口座種別。
+ * 
+ * @see io.swagger.client.model.RequestSendOrder.accountType:注文発注（株式）情報／口座種別。
  */
 public enum AccountTypeCode {
 	一般(2), 特定(4), 法人(12);
