@@ -7,6 +7,7 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 import com.github.hiuchida.api.consts.CashmarginCode;
+import com.github.hiuchida.api.consts.ExchangeCode;
 import com.github.hiuchida.api.consts.FutureCode;
 import com.github.hiuchida.api.consts.ProductCode;
 import com.github.hiuchida.api.consts.PutOrCallCode;
@@ -38,8 +39,9 @@ public class InfoApiWrapperTest {
     @Test
     public void boardGetTest() throws Exception {
         String X_API_KEY = AuthorizedToken.getToken();
-        String symbol = "9433@1"; // ＫＤＤＩ
-        BoardSuccess response = api.boardGet(X_API_KEY, symbol);
+        String symbol = "9433"; // ＫＤＤＩ
+        ExchangeCode ec = ExchangeCode.東証;
+        BoardSuccess response = api.boardGet(X_API_KEY, symbol, ec);
 
         // TODO: test validations
         System.out.println(response);        

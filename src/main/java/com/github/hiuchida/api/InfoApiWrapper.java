@@ -3,6 +3,7 @@ package com.github.hiuchida.api;
 import java.util.List;
 
 import com.github.hiuchida.api.consts.CashmarginCode;
+import com.github.hiuchida.api.consts.ExchangeCode;
 import com.github.hiuchida.api.consts.FutureCode;
 import com.github.hiuchida.api.consts.ProductCode;
 import com.github.hiuchida.api.consts.PutOrCallCode;
@@ -28,8 +29,9 @@ public class InfoApiWrapper {
 		api = new InfoApi(apiClient);
 	}
 
-	public BoardSuccess boardGet(String X_API_KEY, String symbol) throws ApiException {
-		BoardSuccess response = api.boardGet(X_API_KEY, symbol);
+	public BoardSuccess boardGet(String X_API_KEY, String symbol, ExchangeCode ec) throws ApiException {
+		String symbolStr = symbol + "@" + ec.toString();
+		BoardSuccess response = api.boardGet(X_API_KEY, symbolStr);
 		return response;
 	}
 
