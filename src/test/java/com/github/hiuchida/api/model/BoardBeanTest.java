@@ -86,4 +86,36 @@ public class BoardBeanTest {
 		return bb;
 	}
 
+	@Test
+	public void toStringTest1() {
+		BoardBean bb = parseJson(JSON1);
+		String a1 = bb.toString();
+		assertNotNull(a1);
+		System.out.println(a1);
+	}
+
+	@Test
+	public void toStringTest2() {
+		BoardBean bb = parseJson(JSON2);
+		String a1 = bb.toString();
+		assertNotNull(a1);
+		System.out.println(a1);
+	}
+
+	@Test
+	public void toStringTest3() {
+		BoardBean bb = parseJson(JSON3);
+		String a1 = bb.toString();
+		assertNotNull(a1);
+		System.out.println(a1);
+	}
+
+	@Test
+	public void toStringTest4() {
+		BoardBean bb = parseJson(JSON4);
+		String a1 = bb.toString();
+		assertNotNull(a1);
+		System.out.println(a1);
+	}
+
 }

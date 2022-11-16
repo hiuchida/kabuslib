@@ -1,6 +1,7 @@
 package com.github.hiuchida.api.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -109,6 +110,74 @@ public class SendOrderFutureRequestWrapperTest {
 		assertEquals(underOver.intValue(), a1.getReverseLimitOrder().getUnderOver());
 		assertEquals(afterHitOrderType.intValue(), a1.getReverseLimitOrder().getAfterHitOrderType());
 		assertEquals(afterHitPrice, a1.getReverseLimitOrder().getAfterHitPrice());
+	}
+
+	@Test
+	public void toStringTest() {
+		String symbol = "symbol";
+		ExchangeDCode exchange = ExchangeDCode.日中;
+		TradeTypeCode tradeType = TradeTypeCode.新規;
+		TimeInForceCode timeInForce = TimeInForceCode.FAS;
+		SideCode side = SideCode.買;
+		FrontOrderTypeDCode frontOrderType = FrontOrderTypeDCode.指値;
+		
+		SendOrderFutureRequestWrapper o1 = new SendOrderFutureRequestWrapper();
+		o1.setSymbol(symbol);
+		o1.setExchange(exchange);
+		o1.setTradeType(tradeType);
+		o1.setTimeInForce(timeInForce);
+		o1.setSide(side);
+		o1.setFrontOrderType(frontOrderType);
+		
+		String a1 = o1.toString();
+		assertNotNull(a1);
+		System.out.println(a1);
+	}
+
+	@Test
+	public void toStringTest2() {
+		String symbol = "symbol";
+		ExchangeDCode exchange = ExchangeDCode.日中;
+		TradeTypeCode tradeType = TradeTypeCode.新規;
+		TimeInForceCode timeInForce = TimeInForceCode.FAS;
+		SideCode side = SideCode.買;
+		Integer qty = 12;
+		ClosePositionOrderCode closePositionOrder = ClosePositionOrderCode.損益_低い順_日付_古い順;
+		String holdID1 = "holdID1";
+		Integer qty1 = 1;
+		String holdID2 = "holdID2";
+		Integer qty2 = 2;
+		ClosePosition cp1 = new ClosePosition(holdID1, qty1);
+		ClosePosition cp2 = new ClosePosition(holdID2, qty2);
+		List<ClosePosition> closePositions = new ArrayList<>();
+		closePositions.add(cp1);
+		closePositions.add(cp2);
+		FrontOrderTypeDCode frontOrderType = FrontOrderTypeDCode.指値;
+		Double price = 12.3;
+		Integer expireDay = 123;
+		Double triggerPrice = 12.3;
+		UnderOverCode underOver = UnderOverCode.以下;
+		AfterHitOrderTypeDCode afterHitOrderType = AfterHitOrderTypeDCode.指値;
+		Double afterHitPrice = 12.1;
+		ReverseLimitOrder rlo = new ReverseLimitOrder(triggerPrice, underOver, afterHitOrderType, afterHitPrice);
+		
+		SendOrderFutureRequestWrapper o1 = new SendOrderFutureRequestWrapper();
+		o1.setSymbol(symbol);
+		o1.setExchange(exchange);
+		o1.setTradeType(tradeType);
+		o1.setTimeInForce(timeInForce);
+		o1.setSide(side);
+		o1.setQty(qty);
+		o1.setClosePositionOrder(closePositionOrder);
+		o1.setClosePositions(closePositions);
+		o1.setFrontOrderType(frontOrderType);
+		o1.setPrice(price);
+		o1.setExpireDay(expireDay);
+		o1.setReverseLimitOrder(rlo);
+		
+		String a1 = o1.toString();
+		assertNotNull(a1);
+		System.out.println(a1);
 	}
 
 }

@@ -47,4 +47,37 @@ public class SendOrderOptionRequestWrapper extends SendOrderDerivRequestWrapper 
 		return body;
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("class SendOrderOptionRequestWrapper {\n");
+	    
+//		sb.append("    password: ").append(toIndentedString(password)).append("\n");
+		sb.append("    symbol: ").append(toIndentedString(symbol)).append("\n");
+		sb.append("    exchange: ").append(toIndentedString(exchange)).append("\n");
+		sb.append("    tradeType: ").append(toIndentedString(tradeType)).append("\n");
+		sb.append("    timeInForce: ").append(toIndentedString(timeInForce)).append("\n");
+		sb.append("    side: ").append(toIndentedString(side)).append("\n");
+		sb.append("    qty: ").append(toIndentedString(qty)).append("\n");
+		sb.append("    closePositionOrder: ").append(toIndentedString(closePositionOrder)).append("\n");
+		sb.append("    closePositions: ").append(toIndentedString(closePositions)).append("\n");
+		sb.append("    frontOrderType: ").append(toIndentedString(frontOrderType)).append("\n");
+		sb.append("    price: ").append(toIndentedString(price)).append("\n");
+		sb.append("    expireDay: ").append(toIndentedString(expireDay)).append("\n");
+		sb.append("    reverseLimitOrder: ").append(toIndentedString(reverseLimitOrder)).append("\n");
+		sb.append("}");
+		return sb.toString();
+	}
+
+	/**
+	 * Convert the given object to string with each line indented by 4 spaces
+	 * (except the first line).
+	 */
+	private String toIndentedString(java.lang.Object o) {
+		if (o == null) {
+			return "null";
+		}
+		return o.toString().replace("\n", "\n    ");
+	}
+
 }

@@ -82,6 +82,30 @@ public class SendOrderDerivRequestWrapper extends SendOrderCommonRequestWrapper 
 			return rlo;
 		}
 
+		@Override
+		public String toString() {
+			StringBuilder sb = new StringBuilder();
+			sb.append("class ReverseLimitOrder {\n");
+			
+			sb.append("    triggerPrice: ").append(toIndentedString(triggerPrice)).append("\n");
+			sb.append("    underOver: ").append(toIndentedString(underOver)).append("\n");
+			sb.append("    afterHitOrderType: ").append(toIndentedString(afterHitOrderType)).append("\n");
+			sb.append("    afterHitPrice: ").append(toIndentedString(afterHitPrice)).append("\n");
+			sb.append("}");
+			return sb.toString();
+		}
+
+		/**
+		 * Convert the given object to string with each line indented by 4 spaces
+		 * (except the first line).
+		 */
+		private String toIndentedString(java.lang.Object o) {
+			if (o == null) {
+				return "null";
+			}
+			return o.toString().replace("\n", "\n    ");
+		}
+
 	}
 
 

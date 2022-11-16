@@ -1,6 +1,7 @@
 package com.github.hiuchida.api.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -137,6 +138,89 @@ public class SendOrderRequestWrapperTest {
 		assertEquals(underOver.intValue(), a1.getReverseLimitOrder().getUnderOver());
 		assertEquals(afterHitOrderType.intValue(), a1.getReverseLimitOrder().getAfterHitOrderType());
 		assertEquals(afterHitPrice, a1.getReverseLimitOrder().getAfterHitPrice());
+	}
+
+	@Test
+	public void toStringTest() {
+		String symbol = "symbol";
+		ExchangeSCode exchange = ExchangeSCode.東証;
+		SecurityTypeCode securityType = SecurityTypeCode.株式;
+		SideCode side = SideCode.買;
+		CashmarginStockCode cashMargin = CashmarginStockCode.新規;
+		DelivTypeCode delivType = DelivTypeCode.お預り金;
+		AccountTypeCode accountType = AccountTypeCode.特定;
+		FrontOrderTypeSCode frontOrderType = FrontOrderTypeSCode.指値;
+		
+		SendOrderRequestWrapper o1 = new SendOrderRequestWrapper();
+		o1.setSymbol(symbol);
+		o1.setExchange(exchange);
+		o1.setSecurityType(securityType);
+		o1.setSide(side);
+		o1.setCashMargin(cashMargin);
+		o1.setDelivType(delivType);
+		o1.setAccountType(accountType);
+		o1.setFrontOrderType(frontOrderType);
+		
+		String a1 = o1.toString();
+		assertNotNull(a1);
+		System.out.println(a1);
+	}
+
+	@Test
+	public void toStringTest2() {
+		String symbol = "symbol";
+		ExchangeSCode exchange = ExchangeSCode.東証;
+		SecurityTypeCode securityType = SecurityTypeCode.株式;
+		SideCode side = SideCode.買;
+		CashmarginStockCode cashMargin = CashmarginStockCode.新規;
+		MarginTradeTypeCode marginTradeType = MarginTradeTypeCode.制度信用;
+		Double marginPremiumUnit = 1.2;
+		DelivTypeCode delivType = DelivTypeCode.お預り金;
+		FundTypeCode fundType = FundTypeCode.信用代用;
+		AccountTypeCode accountType = AccountTypeCode.特定;
+		Integer qty = 12;
+		ClosePositionOrderCode closePositionOrder = ClosePositionOrderCode.損益_低い順_日付_古い順;
+		String holdID1 = "holdID1";
+		Integer qty1 = 1;
+		String holdID2 = "holdID2";
+		Integer qty2 = 2;
+		ClosePosition cp1 = new ClosePosition(holdID1, qty1);
+		ClosePosition cp2 = new ClosePosition(holdID2, qty2);
+		List<ClosePosition> closePositions = new ArrayList<>();
+		closePositions.add(cp1);
+		closePositions.add(cp2);
+		FrontOrderTypeSCode frontOrderType = FrontOrderTypeSCode.指値;
+		Double price = 12.3;
+		Integer expireDay = 123;
+		TriggerSecCode triggerSec = TriggerSecCode.発注銘柄;
+		Double triggerPrice = 12.3;
+		UnderOverCode underOver = UnderOverCode.以下;
+		AfterHitOrderTypeSCode afterHitOrderType = AfterHitOrderTypeSCode.指値;
+		Double afterHitPrice = 12.1;
+		ReverseLimitOrder rlo = new ReverseLimitOrder(triggerSec, triggerPrice, underOver, afterHitOrderType, afterHitPrice);
+		
+		SendOrderRequestWrapper o1 = new SendOrderRequestWrapper();
+		o1.setSymbol(symbol);
+		o1.setExchange(exchange);
+		o1.setSecurityType(securityType);
+		o1.setSide(side);
+		o1.setCashMargin(cashMargin);
+		o1.setMarginTradeType(marginTradeType);
+		o1.setMarginPremiumUnit(marginPremiumUnit);
+		o1.setDelivType(delivType);
+		o1.setFundType(fundType);
+		o1.setAccountType(accountType);
+		o1.setQty(qty);
+		o1.setClosePositionOrder(closePositionOrder);
+		o1.setClosePositions(closePositions);
+		o1.setFrontOrderType(frontOrderType);
+		o1.setPrice(price);
+		o1.setExpireDay(expireDay);
+		o1.setReverseLimitOrder(rlo);
+		
+		String a1 = o1.toString();
+		assertNotNull(a1);
+		System.out.println(a1);
 	}
 
 }

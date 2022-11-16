@@ -101,6 +101,31 @@ public class SendOrderRequestWrapper extends SendOrderCommonRequestWrapper {
 			return rlo;
 		}
 
+		@Override
+		public String toString() {
+			StringBuilder sb = new StringBuilder();
+			sb.append("class ReverseLimitOrder {\n");
+			
+			sb.append("    triggerSec: ").append(toIndentedString(triggerSec)).append("\n");
+			sb.append("    triggerPrice: ").append(toIndentedString(triggerPrice)).append("\n");
+			sb.append("    underOver: ").append(toIndentedString(underOver)).append("\n");
+			sb.append("    afterHitOrderType: ").append(toIndentedString(afterHitOrderType)).append("\n");
+			sb.append("    afterHitPrice: ").append(toIndentedString(afterHitPrice)).append("\n");
+			sb.append("}");
+			return sb.toString();
+		}
+
+		/**
+		 * Convert the given object to string with each line indented by 4 spaces
+		 * (except the first line).
+		 */
+		private String toIndentedString(java.lang.Object o) {
+			if (o == null) {
+				return "null";
+			}
+			return o.toString().replace("\n", "\n    ");
+		}
+
 	}
 
 //	  private String password = null;
@@ -311,6 +336,44 @@ public class SendOrderRequestWrapper extends SendOrderCommonRequestWrapper {
 			body.setReverseLimitOrder(rlo);
 		}
 		return body;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("class SendOrderRequestWrapper {\n");
+		
+//	    sb.append("    password: ").append(toIndentedString(password)).append("\n");
+		sb.append("    symbol: ").append(toIndentedString(symbol)).append("\n");
+		sb.append("    exchange: ").append(toIndentedString(exchange)).append("\n");
+		sb.append("    securityType: ").append(toIndentedString(securityType)).append("\n");
+		sb.append("    side: ").append(toIndentedString(side)).append("\n");
+		sb.append("    cashMargin: ").append(toIndentedString(cashMargin)).append("\n");
+		sb.append("    marginTradeType: ").append(toIndentedString(marginTradeType)).append("\n");
+		sb.append("    marginPremiumUnit: ").append(toIndentedString(marginPremiumUnit)).append("\n");
+		sb.append("    delivType: ").append(toIndentedString(delivType)).append("\n");
+		sb.append("    fundType: ").append(toIndentedString(fundType)).append("\n");
+		sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
+		sb.append("    qty: ").append(toIndentedString(qty)).append("\n");
+		sb.append("    closePositionOrder: ").append(toIndentedString(closePositionOrder)).append("\n");
+		sb.append("    closePositions: ").append(toIndentedString(closePositions)).append("\n");
+		sb.append("    frontOrderType: ").append(toIndentedString(frontOrderType)).append("\n");
+		sb.append("    price: ").append(toIndentedString(price)).append("\n");
+		sb.append("    expireDay: ").append(toIndentedString(expireDay)).append("\n");
+		sb.append("    reverseLimitOrder: ").append(toIndentedString(reverseLimitOrder)).append("\n");
+		sb.append("}");
+		return sb.toString();
+	}
+
+	/**
+	 * Convert the given object to string with each line indented by 4 spaces
+	 * (except the first line).
+	 */
+	private String toIndentedString(java.lang.Object o) {
+		if (o == null) {
+			return "null";
+		}
+		return o.toString().replace("\n", "\n    ");
 	}
 
 }

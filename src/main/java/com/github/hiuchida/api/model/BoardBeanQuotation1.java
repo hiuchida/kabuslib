@@ -24,12 +24,28 @@ public class BoardBeanQuotation1 {
 	public BoardBeanQuotation1() {
 	}
 
-	/**
-	 * Generate toString()
-	 */
 	@Override
 	public String toString() {
-		return "BoardBeanQuotation1 [time=" + time + ", sign=" + sign + ", price=" + price + ", qty=" + qty + "]";
+		StringBuilder sb = new StringBuilder();
+		sb.append("class BoardBeanQuotation1 {\n");
+		
+		sb.append("    time: ").append(toIndentedString(time)).append("\n");
+		sb.append("    sign: ").append(toIndentedString(sign)).append("\n");
+		sb.append("    price: ").append(toIndentedString(price)).append("\n");
+		sb.append("    qty: ").append(toIndentedString(qty)).append("\n");
+		sb.append("}");
+		return sb.toString();
+	}
+
+	/**
+	 * Convert the given object to string with each line indented by 4 spaces
+	 * (except the first line).
+	 */
+	private String toIndentedString(java.lang.Object o) {
+		if (o == null) {
+			return "null";
+		}
+		return o.toString().replace("\n", "\n    ");
 	}
 
 }
