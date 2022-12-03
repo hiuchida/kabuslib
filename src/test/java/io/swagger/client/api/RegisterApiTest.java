@@ -14,8 +14,11 @@ package io.swagger.client.api;
 
 import org.junit.jupiter.api.Test;
 
+import com.github.hiuchida.api.consts.ExchangeCode;
+
 import io.swagger.client.model.RegistSuccess;
 import io.swagger.client.model.RequestRegister;
+import io.swagger.client.model.RequestRegisterSymbols;
 import io.swagger.client.model.RequestUnregister;
 import io.swagger.client.model.UnregisterAllSuccess;
 
@@ -38,6 +41,12 @@ public class RegisterApiTest {
     @Test
     public void registerPutTest() throws Exception {
         RequestRegister body = new RequestRegister();
+        String symbol = "9433"; // ＫＤＤＩ
+        ExchangeCode ec = ExchangeCode.東証;
+        RequestRegisterSymbols rrs = new RequestRegisterSymbols();
+        rrs.setSymbol(symbol);
+        rrs.setExchange(ec.intValue());
+        body.addSymbolsItem(rrs);
         String X_API_KEY = AuthorizedToken.getToken();
         RegistSuccess response = api.registerPut(body, X_API_KEY);
 
@@ -71,6 +80,12 @@ public class RegisterApiTest {
     @Test
     public void unregisterPutTest() throws Exception {
         RequestUnregister body = new RequestUnregister();
+        String symbol = "9433"; // ＫＤＤＩ
+        ExchangeCode ec = ExchangeCode.東証;
+        RequestRegisterSymbols rrs = new RequestRegisterSymbols();
+        rrs.setSymbol(symbol);
+        rrs.setExchange(ec.intValue());
+        body.addSymbolsItem(rrs);
         String X_API_KEY = AuthorizedToken.getToken();
         RegistSuccess response = api.unregisterPut(body, X_API_KEY);
 
