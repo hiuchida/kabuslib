@@ -34,4 +34,14 @@ public enum SideCode {
 		throw new IllegalArgumentException("No enum constant id=" + id);
 	}
 
+	public static SideCode valueOfCode(String code) {
+		for (SideCode e : values()) {
+			String idStr = "" + e.id;
+			if (idStr.equals(code)) {
+				return e;
+			}
+		}
+		throw new IllegalArgumentException("No enum constant code=" + code);
+	}
+
 }
