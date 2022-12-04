@@ -24,4 +24,10 @@ public class SideCodeTest {
 		assertEquals(SideCode.買, SideCode.valueOf(2));
 	}
 
+	@Test
+	public void valueOfCodeTest() {
+		assertEquals(SideCode.売, SideCode.valueOfCode("1"));
+		assertEquals(SideCode.買, SideCode.valueOfCode("2"));
+	}
+
 }
