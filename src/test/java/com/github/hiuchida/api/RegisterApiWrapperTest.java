@@ -26,11 +26,9 @@ public class RegisterApiWrapperTest {
      */
     @Test
     public void registerPut1Test() throws Exception {
-    	RegisterSymbolWrapper req = new RegisterSymbolWrapper();
         String symbol = "9433"; // ＫＤＤＩ
         ExchangeCode ec = ExchangeCode.東証;
-        req.setSymbol(symbol);
-        req.setExchange(ec);
+    	RegisterSymbolWrapper req = new RegisterSymbolWrapper(symbol, ec);
         String X_API_KEY = AuthorizedToken.getToken();
         RegistSuccess response = api.registerPut(req, X_API_KEY);
 
@@ -49,11 +47,9 @@ public class RegisterApiWrapperTest {
     @Test
     public void registerPut2Test() throws Exception {
     	List<RegisterSymbolWrapper> reqList = new ArrayList<>();
-    	RegisterSymbolWrapper req = new RegisterSymbolWrapper();
         String symbol = "9433"; // ＫＤＤＩ
         ExchangeCode ec = ExchangeCode.東証;
-        req.setSymbol(symbol);
-        req.setExchange(ec);
+    	RegisterSymbolWrapper req = new RegisterSymbolWrapper(symbol, ec);
         reqList.add(req);
         String X_API_KEY = AuthorizedToken.getToken();
         RegistSuccess response = api.registerPut(reqList, X_API_KEY);
@@ -89,11 +85,9 @@ public class RegisterApiWrapperTest {
      */
     @Test
     public void unregisterPut1Test() throws Exception {
-    	RegisterSymbolWrapper req = new RegisterSymbolWrapper();
         String symbol = "9433"; // ＫＤＤＩ
         ExchangeCode ec = ExchangeCode.東証;
-        req.setSymbol(symbol);
-        req.setExchange(ec);
+    	RegisterSymbolWrapper req = new RegisterSymbolWrapper(symbol, ec);
         String X_API_KEY = AuthorizedToken.getToken();
         RegistSuccess response = api.unregisterPut(req, X_API_KEY);
 
@@ -112,11 +106,9 @@ public class RegisterApiWrapperTest {
     @Test
     public void unregisterPut2Test() throws Exception {
     	List<RegisterSymbolWrapper> reqList = new ArrayList<>();
-    	RegisterSymbolWrapper req = new RegisterSymbolWrapper();
         String symbol = "9433"; // ＫＤＤＩ
         ExchangeCode ec = ExchangeCode.東証;
-        req.setSymbol(symbol);
-        req.setExchange(ec);
+    	RegisterSymbolWrapper req = new RegisterSymbolWrapper(symbol, ec);
         reqList.add(req);
         String X_API_KEY = AuthorizedToken.getToken();
         RegistSuccess response = api.unregisterPut(reqList, X_API_KEY);

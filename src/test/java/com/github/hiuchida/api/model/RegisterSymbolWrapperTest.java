@@ -16,9 +16,7 @@ public class RegisterSymbolWrapperTest {
 		String symbol = "symbol";
 		ExchangeCode exchange = ExchangeCode.東証;
 
-		RegisterSymbolWrapper o1 = new RegisterSymbolWrapper();
-		o1.setSymbol(symbol);
-		o1.setExchange(exchange);
+		RegisterSymbolWrapper o1 = new RegisterSymbolWrapper(symbol, exchange);
 
 		RequestRegisterSymbols a1 = o1.toRequestRegisterSymbols();
 		assertEquals(symbol, a1.getSymbol());
@@ -30,9 +28,7 @@ public class RegisterSymbolWrapperTest {
 		String symbol = "symbol";
 		ExchangeCode exchange = ExchangeCode.東証;
 
-		RegisterSymbolWrapper o1 = new RegisterSymbolWrapper();
-		o1.setSymbol(symbol);
-		o1.setExchange(exchange);
+		RegisterSymbolWrapper o1 = new RegisterSymbolWrapper(symbol, exchange);
 
 		String a1 = o1.toString();
 		assertNotNull(a1);

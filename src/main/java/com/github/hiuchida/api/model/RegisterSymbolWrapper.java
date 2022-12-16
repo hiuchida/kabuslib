@@ -17,6 +17,11 @@ public class RegisterSymbolWrapper {
 
 	private ExchangeCode exchange = null;
 
+	public RegisterSymbolWrapper(String symbol, ExchangeCode exchange) {
+		this.symbol = symbol;
+		this.exchange = exchange;
+	}
+
 	public String getSymbol() {
 		return symbol;
 	}
