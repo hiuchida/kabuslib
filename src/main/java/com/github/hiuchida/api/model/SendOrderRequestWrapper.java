@@ -304,6 +304,11 @@ public class SendOrderRequestWrapper extends SendOrderCommonRequestWrapper {
 		return reverseLimitOrder;
 	}
 
+	public void setReverseLimitOrder(TriggerSecCode triggerSec, Double triggerPrice, UnderOverCode underOver, AfterHitOrderTypeSCode afterHitOrderType, Double afterHitPrice) {
+		ReverseLimitOrder rlo = new ReverseLimitOrder(triggerSec, triggerPrice, underOver, afterHitOrderType, afterHitPrice);
+		this.reverseLimitOrder = rlo;
+	}
+
 	public void setReverseLimitOrder(ReverseLimitOrder reverseLimitOrder) {
 		this.reverseLimitOrder = reverseLimitOrder;
 	}

@@ -13,7 +13,6 @@ import com.github.hiuchida.api.consts.deliv.ExchangeDCode;
 import com.github.hiuchida.api.consts.deliv.FrontOrderTypeDCode;
 import com.github.hiuchida.api.consts.deliv.TimeInForceCode;
 import com.github.hiuchida.api.consts.deliv.TradeTypeCode;
-import com.github.hiuchida.api.model.SendOrderDerivRequestWrapper.ReverseLimitOrder;
 
 import io.swagger.client.model.RequestSendOrderDerivOption;
 
@@ -65,7 +64,6 @@ public class SendOrderOptionRequestWrapperTest {
 		UnderOverCode underOver = UnderOverCode.以下;
 		AfterHitOrderTypeDCode afterHitOrderType = AfterHitOrderTypeDCode.指値;
 		Double afterHitPrice = 12.1;
-		ReverseLimitOrder rlo = new ReverseLimitOrder(triggerPrice, underOver, afterHitOrderType, afterHitPrice);
 		
 		SendOrderOptionRequestWrapper o1 = new SendOrderOptionRequestWrapper();
 		o1.setSymbol(symbol);
@@ -80,7 +78,7 @@ public class SendOrderOptionRequestWrapperTest {
 		o1.setFrontOrderType(frontOrderType);
 		o1.setPrice(price);
 		o1.setExpireDay(expireDay);
-		o1.setReverseLimitOrder(rlo);
+		o1.setReverseLimitOrder(triggerPrice, underOver, afterHitOrderType, afterHitPrice);
 		
 		RequestSendOrderDerivOption a1 = o1.toRequestSendOrderDerivOption();
 		assertEquals(symbol, a1.getSymbol());
@@ -146,7 +144,6 @@ public class SendOrderOptionRequestWrapperTest {
 		UnderOverCode underOver = UnderOverCode.以下;
 		AfterHitOrderTypeDCode afterHitOrderType = AfterHitOrderTypeDCode.指値;
 		Double afterHitPrice = 12.1;
-		ReverseLimitOrder rlo = new ReverseLimitOrder(triggerPrice, underOver, afterHitOrderType, afterHitPrice);
 		
 		SendOrderOptionRequestWrapper o1 = new SendOrderOptionRequestWrapper();
 		o1.setSymbol(symbol);
@@ -161,7 +158,7 @@ public class SendOrderOptionRequestWrapperTest {
 		o1.setFrontOrderType(frontOrderType);
 		o1.setPrice(price);
 		o1.setExpireDay(expireDay);
-		o1.setReverseLimitOrder(rlo);
+		o1.setReverseLimitOrder(triggerPrice, underOver, afterHitOrderType, afterHitPrice);
 		
 		String a1 = o1.toString();
 		assertNotNull(a1);

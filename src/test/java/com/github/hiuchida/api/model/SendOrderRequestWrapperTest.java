@@ -18,7 +18,6 @@ import com.github.hiuchida.api.consts.stock.FundTypeCode;
 import com.github.hiuchida.api.consts.stock.MarginTradeTypeCode;
 import com.github.hiuchida.api.consts.stock.SecurityTypeCode;
 import com.github.hiuchida.api.consts.stock.TriggerSecCode;
-import com.github.hiuchida.api.model.SendOrderRequestWrapper.ReverseLimitOrder;
 
 import io.swagger.client.model.RequestSendOrder;
 
@@ -82,7 +81,6 @@ public class SendOrderRequestWrapperTest {
 		UnderOverCode underOver = UnderOverCode.以下;
 		AfterHitOrderTypeSCode afterHitOrderType = AfterHitOrderTypeSCode.指値;
 		Double afterHitPrice = 12.1;
-		ReverseLimitOrder rlo = new ReverseLimitOrder(triggerSec, triggerPrice, underOver, afterHitOrderType, afterHitPrice);
 		
 		SendOrderRequestWrapper o1 = new SendOrderRequestWrapper();
 		o1.setSymbol(symbol);
@@ -102,7 +100,7 @@ public class SendOrderRequestWrapperTest {
 		o1.setFrontOrderType(frontOrderType);
 		o1.setPrice(price);
 		o1.setExpireDay(expireDay);
-		o1.setReverseLimitOrder(rlo);
+		o1.setReverseLimitOrder(triggerSec, triggerPrice, underOver, afterHitOrderType, afterHitPrice);
 		
 		RequestSendOrder a1 = o1.toRequestSendOrder();
 		assertEquals(symbol, a1.getSymbol());
@@ -184,7 +182,6 @@ public class SendOrderRequestWrapperTest {
 		UnderOverCode underOver = UnderOverCode.以下;
 		AfterHitOrderTypeSCode afterHitOrderType = AfterHitOrderTypeSCode.指値;
 		Double afterHitPrice = 12.1;
-		ReverseLimitOrder rlo = new ReverseLimitOrder(triggerSec, triggerPrice, underOver, afterHitOrderType, afterHitPrice);
 		
 		SendOrderRequestWrapper o1 = new SendOrderRequestWrapper();
 		o1.setSymbol(symbol);
@@ -204,7 +201,7 @@ public class SendOrderRequestWrapperTest {
 		o1.setFrontOrderType(frontOrderType);
 		o1.setPrice(price);
 		o1.setExpireDay(expireDay);
-		o1.setReverseLimitOrder(rlo);
+		o1.setReverseLimitOrder(triggerSec, triggerPrice, underOver, afterHitOrderType, afterHitPrice);
 		
 		String a1 = o1.toString();
 		assertNotNull(a1);

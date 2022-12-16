@@ -236,6 +236,11 @@ public abstract class SendOrderDerivRequestWrapper extends SendOrderCommonReques
 		return reverseLimitOrder;
 	}
 
+	public void setReverseLimitOrder(Double triggerPrice, UnderOverCode underOver, AfterHitOrderTypeDCode afterHitOrderType, Double afterHitPrice) {
+		ReverseLimitOrder rlo = new ReverseLimitOrder(triggerPrice, underOver, afterHitOrderType, afterHitPrice);
+		this.reverseLimitOrder = rlo;
+	}
+
 	public void setReverseLimitOrder(ReverseLimitOrder reverseLimitOrder) {
 		this.reverseLimitOrder = reverseLimitOrder;
 	}
