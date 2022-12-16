@@ -264,6 +264,14 @@ public class SendOrderRequestWrapper extends SendOrderCommonRequestWrapper {
 		return closePositions;
 	}
 
+	public void addClosePosition(String holdID, Integer qty) {
+		if (closePositions == null) {
+			closePositions = new ArrayList<>();
+		}
+		ClosePosition cp = new ClosePosition(holdID, qty);
+		closePositions.add(cp);
+	}
+
 	public void setClosePositions(List<ClosePosition> closePositions) {
 		this.closePositions = closePositions;
 	}

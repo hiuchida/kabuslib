@@ -3,9 +3,6 @@ package com.github.hiuchida.api.model;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.junit.jupiter.api.Test;
 
 import com.github.hiuchida.api.consts.ClosePositionOrderCode;
@@ -16,7 +13,6 @@ import com.github.hiuchida.api.consts.deliv.ExchangeDCode;
 import com.github.hiuchida.api.consts.deliv.FrontOrderTypeDCode;
 import com.github.hiuchida.api.consts.deliv.TimeInForceCode;
 import com.github.hiuchida.api.consts.deliv.TradeTypeCode;
-import com.github.hiuchida.api.model.SendOrderCommonRequestWrapper.ClosePosition;
 import com.github.hiuchida.api.model.SendOrderDerivRequestWrapper.ReverseLimitOrder;
 
 import io.swagger.client.model.RequestSendOrderDerivFuture;
@@ -62,11 +58,6 @@ public class SendOrderFutureRequestWrapperTest {
 		Integer qty1 = 1;
 		String holdID2 = "holdID2";
 		Integer qty2 = 2;
-		ClosePosition cp1 = new ClosePosition(holdID1, qty1);
-		ClosePosition cp2 = new ClosePosition(holdID2, qty2);
-		List<ClosePosition> closePositions = new ArrayList<>();
-		closePositions.add(cp1);
-		closePositions.add(cp2);
 		FrontOrderTypeDCode frontOrderType = FrontOrderTypeDCode.指値;
 		Double price = 12.3;
 		Integer expireDay = 123;
@@ -84,7 +75,8 @@ public class SendOrderFutureRequestWrapperTest {
 		o1.setSide(side);
 		o1.setQty(qty);
 		o1.setClosePositionOrder(closePositionOrder);
-		o1.setClosePositions(closePositions);
+		o1.addClosePosition(holdID1, qty1);
+		o1.addClosePosition(holdID2, qty2);
 		o1.setFrontOrderType(frontOrderType);
 		o1.setPrice(price);
 		o1.setExpireDay(expireDay);
@@ -98,7 +90,7 @@ public class SendOrderFutureRequestWrapperTest {
 		assertEquals(side.toString(), a1.getSide());
 		assertEquals(qty, a1.getQty());
 		assertEquals(closePositionOrder.intValue(), a1.getClosePositionOrder());
-		assertEquals(closePositions.size(), a1.getClosePositions().size());
+		assertEquals(2, a1.getClosePositions().size());
 		assertEquals(holdID1, a1.getClosePositions().get(0).getHoldID());
 		assertEquals(qty1, a1.getClosePositions().get(0).getQty());
 		assertEquals(holdID2, a1.getClosePositions().get(1).getHoldID());
@@ -147,11 +139,6 @@ public class SendOrderFutureRequestWrapperTest {
 		Integer qty1 = 1;
 		String holdID2 = "holdID2";
 		Integer qty2 = 2;
-		ClosePosition cp1 = new ClosePosition(holdID1, qty1);
-		ClosePosition cp2 = new ClosePosition(holdID2, qty2);
-		List<ClosePosition> closePositions = new ArrayList<>();
-		closePositions.add(cp1);
-		closePositions.add(cp2);
 		FrontOrderTypeDCode frontOrderType = FrontOrderTypeDCode.指値;
 		Double price = 12.3;
 		Integer expireDay = 123;
@@ -169,7 +156,8 @@ public class SendOrderFutureRequestWrapperTest {
 		o1.setSide(side);
 		o1.setQty(qty);
 		o1.setClosePositionOrder(closePositionOrder);
-		o1.setClosePositions(closePositions);
+		o1.addClosePosition(holdID1, qty1);
+		o1.addClosePosition(holdID2, qty2);
 		o1.setFrontOrderType(frontOrderType);
 		o1.setPrice(price);
 		o1.setExpireDay(expireDay);

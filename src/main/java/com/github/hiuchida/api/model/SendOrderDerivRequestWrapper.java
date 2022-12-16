@@ -1,5 +1,6 @@
 package com.github.hiuchida.api.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.github.hiuchida.api.consts.ClosePositionOrderCode;
@@ -193,6 +194,14 @@ public abstract class SendOrderDerivRequestWrapper extends SendOrderCommonReques
 
 	public List<ClosePosition> getClosePositions() {
 		return closePositions;
+	}
+
+	public void addClosePosition(String holdID, Integer qty) {
+		if (closePositions == null) {
+			closePositions = new ArrayList<>();
+		}
+		ClosePosition cp = new ClosePosition(holdID, qty);
+		closePositions.add(cp);
 	}
 
 	public void setClosePositions(List<ClosePosition> closePositions) {
