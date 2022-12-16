@@ -23,7 +23,7 @@ import io.swagger.client.model.RequestSendOrderDerivFutureReverseLimitOrder;
  * @see io.swagger.client.model.RequestSendOrderDerivFutureReverseLimitOrder
  * @see io.swagger.client.model.RequestSendOrderDerivOption
  */
-public class SendOrderDerivRequestWrapper extends SendOrderCommonRequestWrapper {
+public abstract class SendOrderDerivRequestWrapper extends SendOrderCommonRequestWrapper {
 
 	public static class ReverseLimitOrder {
 		private Double triggerPrice = null;
