@@ -13,6 +13,7 @@ import com.github.hiuchida.api.consts.StateCode;
 import io.swagger.client.ApiClient;
 import io.swagger.client.ApiException;
 import io.swagger.client.api.InfoApi;
+import io.swagger.client.model.ApiSoftLimitResponse;
 import io.swagger.client.model.BoardSuccess;
 import io.swagger.client.model.OrdersSuccess;
 import io.swagger.client.model.PositionsSuccess;
@@ -27,6 +28,11 @@ public class InfoApiWrapper {
 
 	public InfoApiWrapper(ApiClient apiClient) {
 		api = new InfoApi(apiClient);
+	}
+
+	public ApiSoftLimitResponse apisoftlimitGet(String X_API_KEY) throws ApiException {
+		ApiSoftLimitResponse response = api.apisoftlimitGet(X_API_KEY);
+		return response;
 	}
 
 	public BoardSuccess boardGet(String X_API_KEY, String symbol, ExchangeCode ec) throws ApiException {

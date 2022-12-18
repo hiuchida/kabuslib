@@ -15,6 +15,7 @@ import com.github.hiuchida.api.consts.SideCode;
 import com.github.hiuchida.api.consts.StateCode;
 
 import io.swagger.client.api.AuthorizedToken;
+import io.swagger.client.model.ApiSoftLimitResponse;
 import io.swagger.client.model.BoardSuccess;
 import io.swagger.client.model.OrdersSuccess;
 import io.swagger.client.model.PositionsSuccess;
@@ -27,6 +28,23 @@ import io.swagger.client.model.SymbolNameSuccess;
 public class InfoApiWrapperTest {
 
 	private final InfoApiWrapper api = new InfoApiWrapper();
+
+    /**
+     * ソフトリミット
+     *
+     * kabuステーションAPIのソフトリミット値を取得する
+     *
+     * @throws Exception
+     *          if the Api call fails
+     */
+    @Test
+    public void apisoftlimitGetTest() throws Exception {
+        String X_API_KEY = AuthorizedToken.getToken();
+        ApiSoftLimitResponse response = api.apisoftlimitGet(X_API_KEY);
+
+        // TODO: test validations
+        System.out.println(response);        
+    }
 
     /**
      * 時価情報・板情報
