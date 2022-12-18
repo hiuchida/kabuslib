@@ -6,10 +6,10 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 import com.github.hiuchida.api.consts.ExchangeCode;
+import com.github.hiuchida.api.model.RegistSuccessWrapper;
 import com.github.hiuchida.api.model.RegisterSymbolWrapper;
 
 import io.swagger.client.api.AuthorizedToken;
-import io.swagger.client.model.RegistSuccess;
 import io.swagger.client.model.UnregisterAllSuccess;
 
 public class RegisterApiWrapperTest {
@@ -30,7 +30,7 @@ public class RegisterApiWrapperTest {
         ExchangeCode ec = ExchangeCode.東証;
     	RegisterSymbolWrapper req = new RegisterSymbolWrapper(symbol, ec);
         String X_API_KEY = AuthorizedToken.getToken();
-        RegistSuccess response = api.registerPut(req, X_API_KEY);
+        RegistSuccessWrapper response = api.registerPut(req, X_API_KEY);
 
         // TODO: test validations
         System.out.println(response);        
@@ -52,7 +52,7 @@ public class RegisterApiWrapperTest {
     	RegisterSymbolWrapper req = new RegisterSymbolWrapper(symbol, ec);
         reqList.add(req);
         String X_API_KEY = AuthorizedToken.getToken();
-        RegistSuccess response = api.registerPut(reqList, X_API_KEY);
+        RegistSuccessWrapper response = api.registerPut(reqList, X_API_KEY);
 
         // TODO: test validations
         System.out.println(response);        
@@ -89,7 +89,7 @@ public class RegisterApiWrapperTest {
         ExchangeCode ec = ExchangeCode.東証;
     	RegisterSymbolWrapper req = new RegisterSymbolWrapper(symbol, ec);
         String X_API_KEY = AuthorizedToken.getToken();
-        RegistSuccess response = api.unregisterPut(req, X_API_KEY);
+        RegistSuccessWrapper response = api.unregisterPut(req, X_API_KEY);
 
         // TODO: test validations
         System.out.println(response);        
@@ -111,7 +111,7 @@ public class RegisterApiWrapperTest {
     	RegisterSymbolWrapper req = new RegisterSymbolWrapper(symbol, ec);
         reqList.add(req);
         String X_API_KEY = AuthorizedToken.getToken();
-        RegistSuccess response = api.unregisterPut(reqList, X_API_KEY);
+        RegistSuccessWrapper response = api.unregisterPut(reqList, X_API_KEY);
 
         // TODO: test validations
         System.out.println(response);        

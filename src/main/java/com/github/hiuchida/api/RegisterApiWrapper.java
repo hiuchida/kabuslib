@@ -2,6 +2,7 @@ package com.github.hiuchida.api;
 
 import java.util.List;
 
+import com.github.hiuchida.api.model.RegistSuccessWrapper;
 import com.github.hiuchida.api.model.RegisterSymbolWrapper;
 
 import io.swagger.client.ApiClient;
@@ -24,22 +25,22 @@ public class RegisterApiWrapper {
 		api = new RegisterApi(apiClient);
 	}
 
-	public RegistSuccess registerPut(RegisterSymbolWrapper req, String X_API_KEY) throws ApiException {
+	public RegistSuccessWrapper registerPut(RegisterSymbolWrapper req, String X_API_KEY) throws ApiException {
 		RequestRegister body = new RequestRegister();
 		RequestRegisterSymbols rrs = req.toRequestRegisterSymbols();
 		body.addSymbolsItem(rrs);
 		RegistSuccess response = api.registerPut(body, X_API_KEY);
-		return response;
+		return new RegistSuccessWrapper(response);
 	}
 
-	public RegistSuccess registerPut(List<RegisterSymbolWrapper> reqList, String X_API_KEY) throws ApiException {
+	public RegistSuccessWrapper registerPut(List<RegisterSymbolWrapper> reqList, String X_API_KEY) throws ApiException {
 		RequestRegister body = new RequestRegister();
 		for (RegisterSymbolWrapper req : reqList) {
 			RequestRegisterSymbols rrs = req.toRequestRegisterSymbols();
 			body.addSymbolsItem(rrs);
 		}
 		RegistSuccess response = api.registerPut(body, X_API_KEY);
-		return response;
+		return new RegistSuccessWrapper(response);
 	}
 
 	public UnregisterAllSuccess unregisterAllPut(String X_API_KEY) throws ApiException {
@@ -47,22 +48,22 @@ public class RegisterApiWrapper {
 		return response;
 	}
 
-	public RegistSuccess unregisterPut(RegisterSymbolWrapper req, String X_API_KEY) throws ApiException {
+	public RegistSuccessWrapper unregisterPut(RegisterSymbolWrapper req, String X_API_KEY) throws ApiException {
 		RequestUnregister body = new RequestUnregister();
 		RequestRegisterSymbols rrs = req.toRequestRegisterSymbols();
 		body.addSymbolsItem(rrs);
 		RegistSuccess response = api.unregisterPut(body, X_API_KEY);
-		return response;
+		return new RegistSuccessWrapper(response);
 	}
 
-	public RegistSuccess unregisterPut(List<RegisterSymbolWrapper> reqList, String X_API_KEY) throws ApiException {
+	public RegistSuccessWrapper unregisterPut(List<RegisterSymbolWrapper> reqList, String X_API_KEY) throws ApiException {
 		RequestUnregister body = new RequestUnregister();
 		for (RegisterSymbolWrapper req : reqList) {
 			RequestRegisterSymbols rrs = req.toRequestRegisterSymbols();
 			body.addSymbolsItem(rrs);
 		}
 		RegistSuccess response = api.unregisterPut(body, X_API_KEY);
-		return response;
+		return new RegistSuccessWrapper(response);
 	}
 
 }
