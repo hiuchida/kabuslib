@@ -26,7 +26,7 @@ import com.github.hiuchida.api.consts.stock.ExchangeSCode;
 import com.github.hiuchida.api.consts.stock.FrontOrderTypeSCode;
 import com.github.hiuchida.api.consts.stock.FundTypeCode;
 import com.github.hiuchida.api.consts.stock.MarginTradeTypeCode;
-import com.github.hiuchida.api.consts.stock.SecurityTypeCode;
+import com.github.hiuchida.api.consts.stock.SecurityTypeSCode;
 
 import io.swagger.client.model.OrderSuccess;
 import io.swagger.client.model.RequestCancelOrder;
@@ -130,7 +130,7 @@ public class OrderApiTest {
         body.setPassword(PWD);
         body.setSymbol("9433@" + ExchangeSCode.東証.toString()); // ＫＤＤＩ
         body.setExchange(ExchangeSCode.東証.intValue());
-        body.setSecurityType(SecurityTypeCode.株式.intValue());
+        body.setSecurityType(SecurityTypeSCode.株式.intValue());
         body.setSide(SideCode.買.toString());
         body.setCashMargin(CashmarginStockCode.現物.intValue());
         body.setMarginTradeType(MarginTradeTypeCode.制度信用.intValue());

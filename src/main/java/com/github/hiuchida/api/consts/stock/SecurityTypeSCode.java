@@ -5,12 +5,12 @@ package com.github.hiuchida.api.consts.stock;
  * 
  * @see io.swagger.client.model.RequestSendOrder.securityType:注文発注（株式）情報／商品種別。
  */
-public enum SecurityTypeCode {
+public enum SecurityTypeSCode {
 	株式(1);
 
 	private int id;
 
-	private SecurityTypeCode(int id) {
+	private SecurityTypeSCode(int id) {
 		this.id = id;
 	}
 
@@ -23,8 +23,8 @@ public enum SecurityTypeCode {
 		return Integer.toString(id);
 	}
 
-	public static SecurityTypeCode valueOf(int id) {
-		for (SecurityTypeCode e : values()) {
+	public static SecurityTypeSCode valueOf(int id) {
+		for (SecurityTypeSCode e : values()) {
 			if (e.id == id) {
 				return e;
 			}

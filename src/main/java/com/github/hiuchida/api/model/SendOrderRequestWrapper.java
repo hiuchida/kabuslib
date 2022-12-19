@@ -14,7 +14,7 @@ import com.github.hiuchida.api.consts.stock.ExchangeSCode;
 import com.github.hiuchida.api.consts.stock.FrontOrderTypeSCode;
 import com.github.hiuchida.api.consts.stock.FundTypeCode;
 import com.github.hiuchida.api.consts.stock.MarginTradeTypeCode;
-import com.github.hiuchida.api.consts.stock.SecurityTypeCode;
+import com.github.hiuchida.api.consts.stock.SecurityTypeSCode;
 import com.github.hiuchida.api.consts.stock.TriggerSecCode;
 
 import io.swagger.client.model.Positions;
@@ -134,7 +134,7 @@ public class SendOrderRequestWrapper extends SendOrderCommonRequestWrapper {
 
 	private ExchangeSCode exchange = null;
 
-	private SecurityTypeCode securityType = null;
+	private SecurityTypeSCode securityType = null;
 
 	private SideCode side = null;
 
@@ -180,11 +180,11 @@ public class SendOrderRequestWrapper extends SendOrderCommonRequestWrapper {
 		this.exchange = exchange;
 	}
 
-	public SecurityTypeCode getSecurityType() {
+	public SecurityTypeSCode getSecurityType() {
 		return securityType;
 	}
 
-	public void setSecurityType(SecurityTypeCode securityType) {
+	public void setSecurityType(SecurityTypeSCode securityType) {
 		this.securityType = securityType;
 	}
 

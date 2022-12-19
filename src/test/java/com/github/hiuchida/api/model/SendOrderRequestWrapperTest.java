@@ -16,7 +16,7 @@ import com.github.hiuchida.api.consts.stock.ExchangeSCode;
 import com.github.hiuchida.api.consts.stock.FrontOrderTypeSCode;
 import com.github.hiuchida.api.consts.stock.FundTypeCode;
 import com.github.hiuchida.api.consts.stock.MarginTradeTypeCode;
-import com.github.hiuchida.api.consts.stock.SecurityTypeCode;
+import com.github.hiuchida.api.consts.stock.SecurityTypeSCode;
 import com.github.hiuchida.api.consts.stock.TriggerSecCode;
 
 import io.swagger.client.model.RequestSendOrder;
@@ -27,7 +27,7 @@ public class SendOrderRequestWrapperTest {
 	public void toRequestSendOrderTest() {
 		String symbol = "symbol";
 		ExchangeSCode exchange = ExchangeSCode.東証;
-		SecurityTypeCode securityType = SecurityTypeCode.株式;
+		SecurityTypeSCode securityType = SecurityTypeSCode.株式;
 		SideCode side = SideCode.買;
 		CashmarginStockCode cashMargin = CashmarginStockCode.新規;
 		DelivTypeCode delivType = DelivTypeCode.お預り金;
@@ -59,7 +59,7 @@ public class SendOrderRequestWrapperTest {
 	public void toRequestSendOrderTest2() {
 		String symbol = "symbol";
 		ExchangeSCode exchange = ExchangeSCode.東証;
-		SecurityTypeCode securityType = SecurityTypeCode.株式;
+		SecurityTypeSCode securityType = SecurityTypeSCode.株式;
 		SideCode side = SideCode.買;
 		CashmarginStockCode cashMargin = CashmarginStockCode.新規;
 		MarginTradeTypeCode marginTradeType = MarginTradeTypeCode.制度信用;
@@ -134,7 +134,7 @@ public class SendOrderRequestWrapperTest {
 	public void toStringTest() {
 		String symbol = "symbol";
 		ExchangeSCode exchange = ExchangeSCode.東証;
-		SecurityTypeCode securityType = SecurityTypeCode.株式;
+		SecurityTypeSCode securityType = SecurityTypeSCode.株式;
 		SideCode side = SideCode.買;
 		CashmarginStockCode cashMargin = CashmarginStockCode.新規;
 		DelivTypeCode delivType = DelivTypeCode.お預り金;
@@ -160,7 +160,7 @@ public class SendOrderRequestWrapperTest {
 	public void toStringTest2() {
 		String symbol = "symbol";
 		ExchangeSCode exchange = ExchangeSCode.東証;
-		SecurityTypeCode securityType = SecurityTypeCode.株式;
+		SecurityTypeSCode securityType = SecurityTypeSCode.株式;
 		SideCode side = SideCode.買;
 		CashmarginStockCode cashMargin = CashmarginStockCode.新規;
 		MarginTradeTypeCode marginTradeType = MarginTradeTypeCode.制度信用;
