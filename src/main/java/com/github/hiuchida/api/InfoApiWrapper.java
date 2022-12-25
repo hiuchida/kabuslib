@@ -10,6 +10,7 @@ import com.github.hiuchida.api.consts.ProductCode;
 import com.github.hiuchida.api.consts.PutOrCallCode;
 import com.github.hiuchida.api.consts.SideCode;
 import com.github.hiuchida.api.consts.StateCode;
+import com.github.hiuchida.api.model.OrdersSuccessWrapper;
 import com.github.hiuchida.api.model.PositionsSuccessWrapper;
 
 import io.swagger.client.ApiClient;
@@ -43,14 +44,19 @@ public class InfoApiWrapper {
 		return response;
 	}
 
-	public List<OrdersSuccess> ordersGet(String X_API_KEY, ProductCode product, String id, String updtime, String details, String symbol, StateCode state, SideCode side, CashmarginCode cashmargin)
+	public List<OrdersSuccessWrapper> ordersGet(String X_API_KEY, ProductCode product, String id, String updtime, String details, String symbol, StateCode state, SideCode side, CashmarginCode cashmargin)
 			throws ApiException {
 		String productStr = (product != null) ? product.toString() : null;
 		String stateStr = (state != null) ? state.toString() : null;
 		String sideStr = (side != null) ? side.toString() : null;
 		String cashmarginStr = (cashmargin != null) ? cashmargin.toString() : null;
 		List<OrdersSuccess> response = api.ordersGet(X_API_KEY, productStr, id, updtime, details, symbol, stateStr, sideStr, cashmarginStr);
-		return response;
+		List<OrdersSuccessWrapper> list = new ArrayList<>();
+		for (OrdersSuccess os : response) {
+			OrdersSuccessWrapper item = new OrdersSuccessWrapper(os);
+			list.add(item);
+		}
+		return list;
 	}
 
 	public List<PositionsSuccessWrapper> positionsGet(String X_API_KEY, ProductCode product, String symbol, SideCode side, String addinfo)

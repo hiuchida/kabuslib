@@ -13,12 +13,12 @@ import com.github.hiuchida.api.consts.ProductCode;
 import com.github.hiuchida.api.consts.PutOrCallCode;
 import com.github.hiuchida.api.consts.SideCode;
 import com.github.hiuchida.api.consts.StateCode;
+import com.github.hiuchida.api.model.OrdersSuccessWrapper;
 import com.github.hiuchida.api.model.PositionsSuccessWrapper;
 
 import io.swagger.client.api.AuthorizedToken;
 import io.swagger.client.model.ApiSoftLimitResponse;
 import io.swagger.client.model.BoardSuccess;
-import io.swagger.client.model.OrdersSuccess;
 import io.swagger.client.model.SymbolNameSuccess;
 
 /**
@@ -84,14 +84,14 @@ public class InfoApiWrapperTest {
         StateCode state = StateCode.処理済;
         SideCode side = SideCode.買;
         CashmarginCode cashmargin = CashmarginCode.新規;
-        List<OrdersSuccess> response = api.ordersGet(X_API_KEY, product, id, updtime, details, symbol, state, side, cashmargin);
+        List<OrdersSuccessWrapper> response = api.ordersGet(X_API_KEY, product, id, updtime, details, symbol, state, side, cashmargin);
 
         // TODO: test validations
 //        System.out.println(response);
-        System.out.println("List<OrdersSuccess>.size=" + response.size());
+        System.out.println("List<OrdersSuccessWrapper>.size=" + response.size());
         for (int i = 0; i < response.size(); i++) {
-        	OrdersSuccess order = response.get(i);
-        	if (order.getState() == 5) {
+        	OrdersSuccessWrapper order = response.get(i);
+        	if (order.getState() == StateCode.終了) {
         		continue;
         	}
         	System.out.println((i + 1) + ": " + order);
