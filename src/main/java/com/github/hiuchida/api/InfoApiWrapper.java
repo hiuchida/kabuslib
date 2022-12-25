@@ -1,5 +1,6 @@
 package com.github.hiuchida.api;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.github.hiuchida.api.consts.CashmarginCode;
@@ -9,6 +10,7 @@ import com.github.hiuchida.api.consts.ProductCode;
 import com.github.hiuchida.api.consts.PutOrCallCode;
 import com.github.hiuchida.api.consts.SideCode;
 import com.github.hiuchida.api.consts.StateCode;
+import com.github.hiuchida.api.model.PositionsSuccessWrapper;
 
 import io.swagger.client.ApiClient;
 import io.swagger.client.ApiException;
@@ -51,12 +53,20 @@ public class InfoApiWrapper {
 		return response;
 	}
 
-	public List<PositionsSuccess> positionsGet(String X_API_KEY, ProductCode product, String symbol, SideCode side, String addinfo)
+	public List<PositionsSuccessWrapper> positionsGet(String X_API_KEY, ProductCode product, String symbol, SideCode side, String addinfo)
 			throws ApiException {
 		String productStr = (product != null) ? product.toString() : null;
 		String sideStr = (side != null) ? side.toString() : null;
 		List<PositionsSuccess> response = api.positionsGet(X_API_KEY, productStr, symbol, sideStr, addinfo);
-		return response;
+		if (response == null) {
+			return null;
+		}
+		List<PositionsSuccessWrapper> list = new ArrayList<>();
+		for (PositionsSuccess ps : response) {
+			PositionsSuccessWrapper item = new PositionsSuccessWrapper(ps);
+			list.add(item);
+		}
+		return list;
 	}
 
 	public SymbolNameSuccess symbolnameFutureGet(String X_API_KEY, Integer derivMonth, FutureCode futureCode)

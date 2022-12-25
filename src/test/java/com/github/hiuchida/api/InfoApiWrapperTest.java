@@ -13,12 +13,12 @@ import com.github.hiuchida.api.consts.ProductCode;
 import com.github.hiuchida.api.consts.PutOrCallCode;
 import com.github.hiuchida.api.consts.SideCode;
 import com.github.hiuchida.api.consts.StateCode;
+import com.github.hiuchida.api.model.PositionsSuccessWrapper;
 
 import io.swagger.client.api.AuthorizedToken;
 import io.swagger.client.model.ApiSoftLimitResponse;
 import io.swagger.client.model.BoardSuccess;
 import io.swagger.client.model.OrdersSuccess;
-import io.swagger.client.model.PositionsSuccess;
 import io.swagger.client.model.SymbolNameSuccess;
 
 /**
@@ -113,7 +113,7 @@ public class InfoApiWrapperTest {
         String symbol = null;
         SideCode side = SideCode.買;
         String addinfo = null;
-        List<PositionsSuccess> response = api.positionsGet(X_API_KEY, product, symbol, side, addinfo);
+        List<PositionsSuccessWrapper> response = api.positionsGet(X_API_KEY, product, symbol, side, addinfo);
 
         // TODO: test validations
         System.out.println(response);        
