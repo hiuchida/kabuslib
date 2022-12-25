@@ -65,7 +65,11 @@ public class OrdersSuccessWrapper {
 			this.exchangeID = response.getExchangeID();
 			this.state = StateCode.valueOf(response.getState());
 			this.transactTime = response.getTransactTime();
-			this.ordType = OrdTypeCode.valueOf(response.getOrdType());
+			if (response.getOrdType() == null) {
+				this.ordType = null;
+			} else {
+				this.ordType = OrdTypeCode.valueOf(response.getOrdType());
+			}
 			this.price = response.getPrice();
 			this.qty = response.getQty();
 			this.executionID = response.getExecutionID();
