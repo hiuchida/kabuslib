@@ -12,6 +12,7 @@ public class ExchangeCodeTest {
 		assertEquals(3, ExchangeCode.名証.intValue());
 		assertEquals(5, ExchangeCode.福証.intValue());
 		assertEquals(6, ExchangeCode.札証.intValue());
+		assertEquals(9, ExchangeCode.SOR.intValue());
 		assertEquals(2, ExchangeCode.日通し.intValue());
 		assertEquals(23, ExchangeCode.日中.intValue());
 		assertEquals(24, ExchangeCode.夜間.intValue());
@@ -23,6 +24,7 @@ public class ExchangeCodeTest {
 		assertEquals("3", ExchangeCode.名証.toString());
 		assertEquals("5", ExchangeCode.福証.toString());
 		assertEquals("6", ExchangeCode.札証.toString());
+		assertEquals("9", ExchangeCode.SOR.toString());
 		assertEquals("2", ExchangeCode.日通し.toString());
 		assertEquals("23", ExchangeCode.日中.toString());
 		assertEquals("24", ExchangeCode.夜間.toString());
@@ -34,6 +36,7 @@ public class ExchangeCodeTest {
 		assertEquals(ExchangeCode.名証, ExchangeCode.valueOf(3));
 		assertEquals(ExchangeCode.福証, ExchangeCode.valueOf(5));
 		assertEquals(ExchangeCode.札証, ExchangeCode.valueOf(6));
+		assertEquals(ExchangeCode.SOR, ExchangeCode.valueOf(9));
 		assertEquals(ExchangeCode.日通し, ExchangeCode.valueOf(2));
 		assertEquals(ExchangeCode.日中, ExchangeCode.valueOf(23));
 		assertEquals(ExchangeCode.夜間, ExchangeCode.valueOf(24));
