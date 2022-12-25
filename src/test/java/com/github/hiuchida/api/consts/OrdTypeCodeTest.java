@@ -8,6 +8,7 @@ public class OrdTypeCodeTest {
 
 	@Test
 	public void intValueTest() {
+		assertEquals(0, OrdTypeCode.ZERO.intValue());
 		assertEquals(1, OrdTypeCode.ザラバ.intValue());
 		assertEquals(2, OrdTypeCode.寄り.intValue());
 		assertEquals(3, OrdTypeCode.引け.intValue());
@@ -18,6 +19,7 @@ public class OrdTypeCodeTest {
 
 	@Test
 	public void toStringTest() {
+		assertEquals("0", OrdTypeCode.ZERO.toString());
 		assertEquals("1", OrdTypeCode.ザラバ.toString());
 		assertEquals("2", OrdTypeCode.寄り.toString());
 		assertEquals("3", OrdTypeCode.引け.toString());
@@ -28,6 +30,7 @@ public class OrdTypeCodeTest {
 
 	@Test
 	public void valueOfTest() {
+		assertEquals(OrdTypeCode.ZERO, OrdTypeCode.valueOf(0));
 		assertEquals(OrdTypeCode.ザラバ, OrdTypeCode.valueOf(1));
 		assertEquals(OrdTypeCode.寄り, OrdTypeCode.valueOf(2));
 		assertEquals(OrdTypeCode.引け, OrdTypeCode.valueOf(3));
