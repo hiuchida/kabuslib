@@ -58,6 +58,21 @@ import io.swagger.client.model.BoardSuccessSell9;
 public class BoardSuccessWrapper {
 
 	public static class Quotation1 {
+
+		public static Quotation1 create(BoardSuccessSell1 o) {
+			if (o == null) {
+				return null;
+			}
+			return new Quotation1(o.getTime(), o.getSign(), o.getPrice(), o.getQty());
+		}
+
+		public static Quotation1 create(BoardSuccessBuy1 o) {
+			if (o == null) {
+				return null;
+			}
+			return new Quotation1(o.getTime(), o.getSign(), o.getPrice(), o.getQty());
+		}
+
 		private OffsetDateTime time = null;
 
 		private SignCode sign = null;
@@ -66,18 +81,11 @@ public class BoardSuccessWrapper {
 
 		private Double qty = null;
 
-		public Quotation1(BoardSuccessSell1 o) {
-			this.time = o.getTime();
-			this.sign = SignCode.valueOfCode(o.getSign());
-			this.price = o.getPrice();
-			this.qty = o.getQty();
-		}
-
-		public Quotation1(BoardSuccessBuy1 o) {
-			this.time = o.getTime();
-			this.sign = SignCode.valueOfCode(o.getSign());
-			this.price = o.getPrice();
-			this.qty = o.getQty();
+		private Quotation1(OffsetDateTime time, String signStr, Double price, Double qty) {
+			this.time = time;
+			this.sign = SignCode.valueOfCode(signStr);
+			this.price = price;
+			this.qty = qty;
 		}
 
 		public OffsetDateTime getTime() {
@@ -436,7 +444,7 @@ public class BoardSuccessWrapper {
 			this.bidSign = SignCode.valueOfCode(response.getBidSign());
 		}
 		this.marketOrderSellQty = response.getMarketOrderSellQty();
-		this.sell1 = new Quotation1(response.getSell1());
+		this.sell1 = Quotation1.create(response.getSell1());
 		this.sell2 = new Quotation2(response.getSell2());
 		this.sell3 = new Quotation2(response.getSell3());
 		this.sell4 = new Quotation2(response.getSell4());
@@ -455,7 +463,7 @@ public class BoardSuccessWrapper {
 			this.askSign = SignCode.valueOfCode(response.getAskSign());
 		}
 		this.marketOrderBuyQty = response.getMarketOrderBuyQty();
-		this.buy1 = new Quotation1(response.getBuy1());
+		this.buy1 = Quotation1.create(response.getBuy1());
 		this.buy2 = new Quotation2(response.getBuy2());
 		this.buy3 = new Quotation2(response.getBuy3());
 		this.buy4 = new Quotation2(response.getBuy4());
