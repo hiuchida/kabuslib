@@ -10,6 +10,7 @@ import com.github.hiuchida.api.consts.ProductCode;
 import com.github.hiuchida.api.consts.PutOrCallCode;
 import com.github.hiuchida.api.consts.SideCode;
 import com.github.hiuchida.api.consts.StateCode;
+import com.github.hiuchida.api.model.BoardSuccessWrapper;
 import com.github.hiuchida.api.model.OrdersSuccessWrapper;
 import com.github.hiuchida.api.model.PositionsSuccessWrapper;
 
@@ -38,10 +39,10 @@ public class InfoApiWrapper {
 		return response;
 	}
 
-	public BoardSuccess boardGet(String X_API_KEY, String symbol, ExchangeCode ec) throws ApiException {
+	public BoardSuccessWrapper boardGet(String X_API_KEY, String symbol, ExchangeCode ec) throws ApiException {
 		String symbolStr = symbol + "@" + ec.toString();
 		BoardSuccess response = api.boardGet(X_API_KEY, symbolStr);
-		return response;
+		return new BoardSuccessWrapper(response);
 	}
 
 	public List<OrdersSuccessWrapper> ordersGet(String X_API_KEY, ProductCode product, String id, String updtime, String details, String symbol, StateCode state, SideCode side, CashmarginCode cashmargin)

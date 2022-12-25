@@ -13,12 +13,12 @@ import com.github.hiuchida.api.consts.ProductCode;
 import com.github.hiuchida.api.consts.PutOrCallCode;
 import com.github.hiuchida.api.consts.SideCode;
 import com.github.hiuchida.api.consts.StateCode;
+import com.github.hiuchida.api.model.BoardSuccessWrapper;
 import com.github.hiuchida.api.model.OrdersSuccessWrapper;
 import com.github.hiuchida.api.model.PositionsSuccessWrapper;
 
 import io.swagger.client.api.AuthorizedToken;
 import io.swagger.client.model.ApiSoftLimitResponse;
-import io.swagger.client.model.BoardSuccess;
 import io.swagger.client.model.SymbolNameSuccess;
 
 /**
@@ -59,7 +59,7 @@ public class InfoApiWrapperTest {
         String X_API_KEY = AuthorizedToken.getToken();
         String symbol = "9433"; // ＫＤＤＩ
         ExchangeCode ec = ExchangeCode.東証;
-        BoardSuccess response = api.boardGet(X_API_KEY, symbol, ec);
+        BoardSuccessWrapper response = api.boardGet(X_API_KEY, symbol, ec);
 
         // TODO: test validations
         System.out.println(response);        
