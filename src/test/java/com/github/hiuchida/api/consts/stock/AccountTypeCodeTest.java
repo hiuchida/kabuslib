@@ -22,6 +22,7 @@ public class AccountTypeCodeTest {
 
 	@Test
 	public void valueOfTest() {
+		assertEquals(null, AccountTypeCode.valueOf((Integer) null));
 		assertEquals(AccountTypeCode.一般, AccountTypeCode.valueOf(2));
 		assertEquals(AccountTypeCode.特定, AccountTypeCode.valueOf(4));
 		assertEquals(AccountTypeCode.法人, AccountTypeCode.valueOf(12));

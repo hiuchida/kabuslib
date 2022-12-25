@@ -23,7 +23,10 @@ public enum RecTypeCode {
 		return Integer.toString(id);
 	}
 
-	public static RecTypeCode valueOf(int id) {
+	public static RecTypeCode valueOf(Integer id) {
+		if (id == null) {
+			return null;
+		}
 		for (RecTypeCode e : values()) {
 			if (e.id == id) {
 				return e;

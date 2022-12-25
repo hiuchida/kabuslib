@@ -23,7 +23,10 @@ public enum MarginTradeTypeCode {
 		return Integer.toString(id);
 	}
 
-	public static MarginTradeTypeCode valueOf(int id) {
+	public static MarginTradeTypeCode valueOf(Integer id) {
+		if (id == null) {
+			return null;
+		}
 		for (MarginTradeTypeCode e : values()) {
 			if (e.id == id) {
 				return e;

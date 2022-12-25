@@ -30,6 +30,7 @@ public class OrdTypeCodeTest {
 
 	@Test
 	public void valueOfTest() {
+		assertEquals(null, OrdTypeCode.valueOf((Integer) null));
 		assertEquals(OrdTypeCode.ZERO, OrdTypeCode.valueOf(0));
 		assertEquals(OrdTypeCode.ザラバ, OrdTypeCode.valueOf(1));
 		assertEquals(OrdTypeCode.寄り, OrdTypeCode.valueOf(2));

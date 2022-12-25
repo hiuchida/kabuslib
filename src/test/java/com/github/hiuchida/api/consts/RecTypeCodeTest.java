@@ -32,6 +32,7 @@ public class RecTypeCodeTest {
 
 	@Test
 	public void valueOfTest() {
+		assertEquals(null, RecTypeCode.valueOf((Integer) null));
 		assertEquals(RecTypeCode.受付, RecTypeCode.valueOf(1));
 		assertEquals(RecTypeCode.繰越, RecTypeCode.valueOf(2));
 		assertEquals(RecTypeCode.期限切れ, RecTypeCode.valueOf(3));

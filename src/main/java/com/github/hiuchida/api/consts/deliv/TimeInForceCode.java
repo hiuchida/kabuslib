@@ -23,7 +23,10 @@ public enum TimeInForceCode {
 		return Integer.toString(id);
 	}
 
-	public static TimeInForceCode valueOf(int id) {
+	public static TimeInForceCode valueOf(Integer id) {
+		if (id == null) {
+			return null;
+		}
 		for (TimeInForceCode e : values()) {
 			if (e.id == id) {
 				return e;

@@ -66,11 +66,7 @@ public class PositionsSuccessWrapper {
 		this.symbolName = response.getSymbolName();
 		this.exchange = ExchangeCode.valueOf(response.getExchange());
 		this.exchangeName = response.getExchangeName();
-		if (response.getSecurityType() == null) {
-			this.securityType = null;
-		} else {
-			this.securityType = SecurityTypeCode.valueOf(response.getSecurityType());
-		}
+		this.securityType = SecurityTypeCode.valueOf(response.getSecurityType());
 		this.executionDay = response.getExecutionDay();
 		this.price = response.getPrice();
 		this.leavesQty = response.getLeavesQty();
@@ -80,11 +76,7 @@ public class PositionsSuccessWrapper {
 		this.commission = response.getCommission();
 		this.commissionTax = response.getCommissionTax();
 		this.expireDay = response.getExpireDay();
-		if (response.getMarginTradeType() == null) {
-			this.marginTradeType = null;
-		} else {
-			this.marginTradeType = MarginTradeTypeCode.valueOf(response.getMarginTradeType());
-		}
+		this.marginTradeType = MarginTradeTypeCode.valueOf(response.getMarginTradeType());
 		this.currentPrice = response.getCurrentPrice();
 		this.valuation = response.getValuation();
 		this.profitLoss = response.getProfitLoss();

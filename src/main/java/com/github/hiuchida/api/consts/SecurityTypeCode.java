@@ -19,7 +19,10 @@ public enum SecurityTypeCode {
 		return Integer.toString(id);
 	}
 
-	public static SecurityTypeCode valueOf(int id) {
+	public static SecurityTypeCode valueOf(Integer id) {
+		if (id == null) {
+			return null;
+		}
 		for (SecurityTypeCode e : values()) {
 			if (e.id == id) {
 				return e;

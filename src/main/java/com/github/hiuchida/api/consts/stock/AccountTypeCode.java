@@ -23,7 +23,10 @@ public enum AccountTypeCode {
 		return Integer.toString(id);
 	}
 
-	public static AccountTypeCode valueOf(int id) {
+	public static AccountTypeCode valueOf(Integer id) {
+		if (id == null) {
+			return null;
+		}
 		for (AccountTypeCode e : values()) {
 			if (e.id == id) {
 				return e;

@@ -32,6 +32,7 @@ public class ExchangeCodeTest {
 
 	@Test
 	public void valueOfTest() {
+		assertEquals(null, ExchangeCode.valueOf((Integer) null));
 		assertEquals(ExchangeCode.東証, ExchangeCode.valueOf(1));
 		assertEquals(ExchangeCode.名証, ExchangeCode.valueOf(3));
 		assertEquals(ExchangeCode.福証, ExchangeCode.valueOf(5));

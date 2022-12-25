@@ -30,6 +30,7 @@ import io.swagger.client.model.OrdersSuccessDetails;
 public class OrdersSuccessWrapper {
 
 	public static class Detail {
+		
 		private Integer seqNum = null;
 
 		private String ID = null;
@@ -65,11 +66,7 @@ public class OrdersSuccessWrapper {
 			this.exchangeID = response.getExchangeID();
 			this.state = StateCode.valueOf(response.getState());
 			this.transactTime = response.getTransactTime();
-			if (response.getOrdType() == null) {
-				this.ordType = null;
-			} else {
-				this.ordType = OrdTypeCode.valueOf(response.getOrdType());
-			}
+			this.ordType = OrdTypeCode.valueOf(response.getOrdType());
 			this.price = response.getPrice();
 			this.qty = response.getQty();
 			this.executionID = response.getExecutionID();
@@ -279,28 +276,16 @@ public class OrdersSuccessWrapper {
 		this.symbolName = response.getSymbolName();
 		this.exchange = ExchangeCode.valueOf(response.getExchange());
 		this.exchangeName = response.getExchangeName();
-		if (response.getTimeInForce() == null) {
-			this.timeInForce = null;
-		} else {
-			this.timeInForce = TimeInForceCode.valueOf(response.getTimeInForce());
-		}
+		this.timeInForce = TimeInForceCode.valueOf(response.getTimeInForce());
 		this.price = response.getPrice();
 		this.orderQty = response.getOrderQty();
 		this.cumQty = response.getCumQty();
 		this.side = SideCode.valueOfCode(response.getSide());
-		if (response.getCashMargin() == null) {
-			this.cashMargin = null;
-		} else {
-			this.cashMargin = CashmarginCode.valueOf(response.getCashMargin());
-		}
+		this.cashMargin = CashmarginCode.valueOf(response.getCashMargin());
 		this.accountType = AccountTypeCode.valueOf(response.getAccountType());
 		this.delivType = DelivTypeCode.valueOf(response.getDelivType());
 		this.expireDay = response.getExpireDay();
-		if (response.getMarginTradeType() == null) {
-			this.marginTradeType = null;
-		} else {
-			this.marginTradeType = MarginTradeTypeCode.valueOf(response.getMarginTradeType());
-		}
+		this.marginTradeType = MarginTradeTypeCode.valueOf(response.getMarginTradeType());
 		this.marginPremium = response.getMarginPremium();
 		if (response.getDetails() == null) {
 			this.details = null;

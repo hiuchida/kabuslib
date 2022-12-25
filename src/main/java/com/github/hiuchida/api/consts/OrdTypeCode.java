@@ -23,7 +23,10 @@ public enum OrdTypeCode {
 		return Integer.toString(id);
 	}
 
-	public static OrdTypeCode valueOf(int id) {
+	public static OrdTypeCode valueOf(Integer id) {
+		if (id == null) {
+			return null;
+		}
 		for (OrdTypeCode e : values()) {
 			if (e.id == id) {
 				return e;

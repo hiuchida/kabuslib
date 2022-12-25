@@ -22,6 +22,7 @@ public class MarginTradeTypeCodeTest {
 
 	@Test
 	public void valueOfTest() {
+		assertEquals(null, MarginTradeTypeCode.valueOf((Integer) null));
 		assertEquals(MarginTradeTypeCode.制度信用, MarginTradeTypeCode.valueOf(1));
 		assertEquals(MarginTradeTypeCode.一般信用_長期, MarginTradeTypeCode.valueOf(2));
 		assertEquals(MarginTradeTypeCode.一般信用_デイトレ, MarginTradeTypeCode.valueOf(3));

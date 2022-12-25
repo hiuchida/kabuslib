@@ -22,7 +22,10 @@ public enum ExchangeCode {
 		return Integer.toString(id);
 	}
 
-	public static ExchangeCode valueOf(int id) {
+	public static ExchangeCode valueOf(Integer id) {
+		if (id == null) {
+			return null;
+		}
 		for (ExchangeCode e : values()) {
 			if (e.id == id) {
 				return e;

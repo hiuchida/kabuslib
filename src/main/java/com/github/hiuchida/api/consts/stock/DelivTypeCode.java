@@ -22,7 +22,10 @@ public enum DelivTypeCode {
 		return Integer.toString(id);
 	}
 
-	public static DelivTypeCode valueOf(int id) {
+	public static DelivTypeCode valueOf(Integer id) {
+		if (id == null) {
+			return null;
+		}
 		for (DelivTypeCode e : values()) {
 			if (e.id == id) {
 				return e;

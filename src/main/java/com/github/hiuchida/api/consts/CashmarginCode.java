@@ -22,7 +22,10 @@ public enum CashmarginCode {
 		return Integer.toString(id);
 	}
 
-	public static CashmarginCode valueOf(int id) {
+	public static CashmarginCode valueOf(Integer id) {
+		if (id == null) {
+			return null;
+		}
 		for (CashmarginCode e : values()) {
 			if (e.id == id) {
 				return e;

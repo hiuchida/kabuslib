@@ -26,6 +26,7 @@ public class StateCodeTest {
 
 	@Test
 	public void valueOfTest() {
+		assertEquals(null, StateCode.valueOf((Integer) null));
 		assertEquals(StateCode.待機, StateCode.valueOf(1));
 		assertEquals(StateCode.処理中, StateCode.valueOf(2));
 		assertEquals(StateCode.処理済, StateCode.valueOf(3));

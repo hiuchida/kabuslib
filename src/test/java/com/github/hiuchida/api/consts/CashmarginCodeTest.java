@@ -20,6 +20,7 @@ public class CashmarginCodeTest {
 
 	@Test
 	public void valueOfTest() {
+		assertEquals(null, CashmarginCode.valueOf((Integer) null));
 		assertEquals(CashmarginCode.新規, CashmarginCode.valueOf(2));
 		assertEquals(CashmarginCode.返済, CashmarginCode.valueOf(3));
 	}

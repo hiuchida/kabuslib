@@ -22,6 +22,7 @@ public class DelivTypeCodeTest {
 
 	@Test
 	public void valueOfTest() {
+		assertEquals(null, DelivTypeCode.valueOf((Integer) null));
 		assertEquals(DelivTypeCode.指定なし, DelivTypeCode.valueOf(0));
 		assertEquals(DelivTypeCode.自動振替, DelivTypeCode.valueOf(1));
 		assertEquals(DelivTypeCode.お預り金, DelivTypeCode.valueOf(2));

@@ -42,6 +42,7 @@ public class SecurityTypeCodeTest {
 
 	@Test
 	public void valueOfTest() {
+		assertEquals(null, SecurityTypeCode.valueOf((Integer) null));
 		assertEquals(SecurityTypeCode.指数, SecurityTypeCode.valueOf(0));
 		assertEquals(SecurityTypeCode.現物, SecurityTypeCode.valueOf(1));
 		assertEquals(SecurityTypeCode.日経225先物, SecurityTypeCode.valueOf(101));

@@ -22,7 +22,10 @@ public enum StateCode {
 		return Integer.toString(id);
 	}
 
-	public static StateCode valueOf(int id) {
+	public static StateCode valueOf(Integer id) {
+		if (id == null) {
+			return null;
+		}
 		for (StateCode e : values()) {
 			if (e.id == id) {
 				return e;

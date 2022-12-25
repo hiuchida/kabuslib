@@ -22,6 +22,7 @@ public class TimeInForceCodeTest {
 
 	@Test
 	public void valueOfTest() {
+		assertEquals(null, TimeInForceCode.valueOf((Integer) null));
 		assertEquals(TimeInForceCode.FAS, TimeInForceCode.valueOf(1));
 		assertEquals(TimeInForceCode.FAK, TimeInForceCode.valueOf(2));
 		assertEquals(TimeInForceCode.FOK, TimeInForceCode.valueOf(3));
