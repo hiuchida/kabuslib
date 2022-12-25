@@ -147,98 +147,140 @@ public class BoardSuccessWrapper {
 	}
 
 	public static class Quotation2 {
+
+		public static Quotation2 create(BoardSuccessSell2 o) {
+			if (o == null) {
+				return null;
+			}
+			return new Quotation2(o.getPrice(), o.getQty());
+		}
+
+		public static Quotation2 create(BoardSuccessSell3 o) {
+			if (o == null) {
+				return null;
+			}
+			return new Quotation2(o.getPrice(), o.getQty());
+		}
+
+		public static Quotation2 create(BoardSuccessSell4 o) {
+			if (o == null) {
+				return null;
+			}
+			return new Quotation2(o.getPrice(), o.getQty());
+		}
+
+		public static Quotation2 create(BoardSuccessSell5 o) {
+			if (o == null) {
+				return null;
+			}
+			return new Quotation2(o.getPrice(), o.getQty());
+		}
+
+		public static Quotation2 create(BoardSuccessSell6 o) {
+			if (o == null) {
+				return null;
+			}
+			return new Quotation2(o.getPrice(), o.getQty());
+		}
+
+		public static Quotation2 create(BoardSuccessSell7 o) {
+			if (o == null) {
+				return null;
+			}
+			return new Quotation2(o.getPrice(), o.getQty());
+		}
+
+		public static Quotation2 create(BoardSuccessSell8 o) {
+			if (o == null) {
+				return null;
+			}
+			return new Quotation2(o.getPrice(), o.getQty());
+		}
+
+		public static Quotation2 create(BoardSuccessSell9 o) {
+			if (o == null) {
+				return null;
+			}
+			return new Quotation2(o.getPrice(), o.getQty());
+		}
+
+		public static Quotation2 create(BoardSuccessSell10 o) {
+			if (o == null) {
+				return null;
+			}
+			return new Quotation2(o.getPrice(), o.getQty());
+		}
+
+		public static Quotation2 create(BoardSuccessBuy2 o) {
+			if (o == null) {
+				return null;
+			}
+			return new Quotation2(o.getPrice(), o.getQty());
+		}
+
+		public static Quotation2 create(BoardSuccessBuy3 o) {
+			if (o == null) {
+				return null;
+			}
+			return new Quotation2(o.getPrice(), o.getQty());
+		}
+
+		public static Quotation2 create(BoardSuccessBuy4 o) {
+			if (o == null) {
+				return null;
+			}
+			return new Quotation2(o.getPrice(), o.getQty());
+		}
+
+		public static Quotation2 create(BoardSuccessBuy5 o) {
+			if (o == null) {
+				return null;
+			}
+			return new Quotation2(o.getPrice(), o.getQty());
+		}
+
+		public static Quotation2 create(BoardSuccessBuy6 o) {
+			if (o == null) {
+				return null;
+			}
+			return new Quotation2(o.getPrice(), o.getQty());
+		}
+
+		public static Quotation2 create(BoardSuccessBuy7 o) {
+			if (o == null) {
+				return null;
+			}
+			return new Quotation2(o.getPrice(), o.getQty());
+		}
+
+		public static Quotation2 create(BoardSuccessBuy8 o) {
+			if (o == null) {
+				return null;
+			}
+			return new Quotation2(o.getPrice(), o.getQty());
+		}
+
+		public static Quotation2 create(BoardSuccessBuy9 o) {
+			if (o == null) {
+				return null;
+			}
+			return new Quotation2(o.getPrice(), o.getQty());
+		}
+
+		public static Quotation2 create(BoardSuccessBuy10 o) {
+			if (o == null) {
+				return null;
+			}
+			return new Quotation2(o.getPrice(), o.getQty());
+		}
+
 		private Double price = null;
 
 		private Double qty = null;
 
-		public Quotation2(BoardSuccessSell2 o) {
-			this.price = o.getPrice();
-			this.qty = o.getQty();
-		}
-
-		public Quotation2(BoardSuccessSell3 o) {
-			this.price = o.getPrice();
-			this.qty = o.getQty();
-		}
-
-		public Quotation2(BoardSuccessSell4 o) {
-			this.price = o.getPrice();
-			this.qty = o.getQty();
-		}
-
-		public Quotation2(BoardSuccessSell5 o) {
-			this.price = o.getPrice();
-			this.qty = o.getQty();
-		}
-
-		public Quotation2(BoardSuccessSell6 o) {
-			this.price = o.getPrice();
-			this.qty = o.getQty();
-		}
-
-		public Quotation2(BoardSuccessSell7 o) {
-			this.price = o.getPrice();
-			this.qty = o.getQty();
-		}
-
-		public Quotation2(BoardSuccessSell8 o) {
-			this.price = o.getPrice();
-			this.qty = o.getQty();
-		}
-
-		public Quotation2(BoardSuccessSell9 o) {
-			this.price = o.getPrice();
-			this.qty = o.getQty();
-		}
-
-		public Quotation2(BoardSuccessSell10 o) {
-			this.price = o.getPrice();
-			this.qty = o.getQty();
-		}
-
-		public Quotation2(BoardSuccessBuy2 o) {
-			this.price = o.getPrice();
-			this.qty = o.getQty();
-		}
-
-		public Quotation2(BoardSuccessBuy3 o) {
-			this.price = o.getPrice();
-			this.qty = o.getQty();
-		}
-
-		public Quotation2(BoardSuccessBuy4 o) {
-			this.price = o.getPrice();
-			this.qty = o.getQty();
-		}
-
-		public Quotation2(BoardSuccessBuy5 o) {
-			this.price = o.getPrice();
-			this.qty = o.getQty();
-		}
-
-		public Quotation2(BoardSuccessBuy6 o) {
-			this.price = o.getPrice();
-			this.qty = o.getQty();
-		}
-
-		public Quotation2(BoardSuccessBuy7 o) {
-			this.price = o.getPrice();
-			this.qty = o.getQty();
-		}
-
-		public Quotation2(BoardSuccessBuy8 o) {
-			this.price = o.getPrice();
-			this.qty = o.getQty();
-		}
-
-		public Quotation2(BoardSuccessBuy9 o) {
-			this.price = o.getPrice();
-			this.qty = o.getQty();
-		}
-
-		public Quotation2(BoardSuccessBuy10 o) {
-			this.price = o.getPrice();
-			this.qty = o.getQty();
+		private Quotation2(Double price, Double qty) {
+			this.price = price;
+			this.qty = qty;
 		}
 
 		public Double getPrice() {
@@ -445,15 +487,15 @@ public class BoardSuccessWrapper {
 		}
 		this.marketOrderSellQty = response.getMarketOrderSellQty();
 		this.sell1 = Quotation1.create(response.getSell1());
-		this.sell2 = new Quotation2(response.getSell2());
-		this.sell3 = new Quotation2(response.getSell3());
-		this.sell4 = new Quotation2(response.getSell4());
-		this.sell5 = new Quotation2(response.getSell5());
-		this.sell6 = new Quotation2(response.getSell6());
-		this.sell7 = new Quotation2(response.getSell7());
-		this.sell8 = new Quotation2(response.getSell8());
-		this.sell9 = new Quotation2(response.getSell9());
-		this.sell10 = new Quotation2(response.getSell10());
+		this.sell2 = Quotation2.create(response.getSell2());
+		this.sell3 = Quotation2.create(response.getSell3());
+		this.sell4 = Quotation2.create(response.getSell4());
+		this.sell5 = Quotation2.create(response.getSell5());
+		this.sell6 = Quotation2.create(response.getSell6());
+		this.sell7 = Quotation2.create(response.getSell7());
+		this.sell8 = Quotation2.create(response.getSell8());
+		this.sell9 = Quotation2.create(response.getSell9());
+		this.sell10 = Quotation2.create(response.getSell10());
 		this.askQty = response.getAskQty();
 		this.askPrice = response.getAskPrice();
 		this.askTime = response.getAskTime();
@@ -464,15 +506,15 @@ public class BoardSuccessWrapper {
 		}
 		this.marketOrderBuyQty = response.getMarketOrderBuyQty();
 		this.buy1 = Quotation1.create(response.getBuy1());
-		this.buy2 = new Quotation2(response.getBuy2());
-		this.buy3 = new Quotation2(response.getBuy3());
-		this.buy4 = new Quotation2(response.getBuy4());
-		this.buy5 = new Quotation2(response.getBuy5());
-		this.buy6 = new Quotation2(response.getBuy6());
-		this.buy7 = new Quotation2(response.getBuy7());
-		this.buy8 = new Quotation2(response.getBuy8());
-		this.buy9 = new Quotation2(response.getBuy9());
-		this.buy10 = new Quotation2(response.getBuy10());
+		this.buy2 = Quotation2.create(response.getBuy2());
+		this.buy3 = Quotation2.create(response.getBuy3());
+		this.buy4 = Quotation2.create(response.getBuy4());
+		this.buy5 = Quotation2.create(response.getBuy5());
+		this.buy6 = Quotation2.create(response.getBuy6());
+		this.buy7 = Quotation2.create(response.getBuy7());
+		this.buy8 = Quotation2.create(response.getBuy8());
+		this.buy9 = Quotation2.create(response.getBuy9());
+		this.buy10 = Quotation2.create(response.getBuy10());
 		this.overSellQty = response.getOverSellQty();
 		this.underBuyQty = response.getUnderBuyQty();
 		this.totalMarketValue = response.getTotalMarketValue();
