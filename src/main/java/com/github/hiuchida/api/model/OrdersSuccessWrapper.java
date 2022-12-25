@@ -284,7 +284,11 @@ public class OrdersSuccessWrapper {
 		this.orderQty = response.getOrderQty();
 		this.cumQty = response.getCumQty();
 		this.side = SideCode.valueOfCode(response.getSide());
-		this.cashMargin = CashmarginCode.valueOf(response.getCashMargin());
+		if (response.getCashMargin() == null) {
+			this.cashMargin = null;
+		} else {
+			this.cashMargin = CashmarginCode.valueOf(response.getCashMargin());
+		}
 		this.accountType = AccountTypeCode.valueOf(response.getAccountType());
 		this.delivType = DelivTypeCode.valueOf(response.getDelivType());
 		this.expireDay = response.getExpireDay();
