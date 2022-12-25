@@ -24,6 +24,7 @@ public class SignCodeTest {
 
 	@Test
 	public void valueOfTest() {
+		assertEquals(null, SignCode.valueOfCode(null));
 		assertEquals(SignCode.事象なし, SignCode.valueOfCode("0000"));
 		assertEquals(SignCode.一般気配, SignCode.valueOfCode("0101"));
 		assertEquals(SignCode.特別気配, SignCode.valueOfCode("0102"));

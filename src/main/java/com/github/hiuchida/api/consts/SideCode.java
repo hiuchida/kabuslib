@@ -35,6 +35,9 @@ public enum SideCode {
 	}
 
 	public static SideCode valueOfCode(String code) {
+		if (code == null) {
+			return null;
+		}
 		for (SideCode e : values()) {
 			String idStr = "" + e.id;
 			if (idStr.equals(code)) {

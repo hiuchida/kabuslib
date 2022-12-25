@@ -24,6 +24,9 @@ public enum SignCode {
 	}
 
 	public static SignCode valueOfCode(String code) {
+		if (code == null) {
+			return null;
+		}
 		for (SignCode e : values()) {
 			if (e.code.equals(code)) {
 				return e;

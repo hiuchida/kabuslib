@@ -26,6 +26,7 @@ public class SideCodeTest {
 
 	@Test
 	public void valueOfCodeTest() {
+		assertEquals(null, SideCode.valueOfCode(null));
 		assertEquals(SideCode.売, SideCode.valueOfCode("1"));
 		assertEquals(SideCode.買, SideCode.valueOfCode("2"));
 	}
