@@ -430,7 +430,11 @@ public class BoardSuccessWrapper {
 		this.bidQty = response.getBidQty();
 		this.bidPrice = response.getBidPrice();
 		this.bidTime = response.getBidTime();
-		this.bidSign = SignCode.valueOfCode(response.getBidSign());
+		if (response.getBidSign() == null) {
+			this.bidSign = null;
+		} else {
+			this.bidSign = SignCode.valueOfCode(response.getBidSign());
+		}
 		this.marketOrderSellQty = response.getMarketOrderSellQty();
 		this.sell1 = new Quotation1(response.getSell1());
 		this.sell2 = new Quotation2(response.getSell2());
@@ -445,7 +449,11 @@ public class BoardSuccessWrapper {
 		this.askQty = response.getAskQty();
 		this.askPrice = response.getAskPrice();
 		this.askTime = response.getAskTime();
-		this.askSign = SignCode.valueOfCode(response.getAskSign());
+		if (response.getAskSign() == null) {
+			this.askSign = null;
+		} else {
+			this.askSign = SignCode.valueOfCode(response.getAskSign());
+		}
 		this.marketOrderBuyQty = response.getMarketOrderBuyQty();
 		this.buy1 = new Quotation1(response.getBuy1());
 		this.buy2 = new Quotation2(response.getBuy2());
